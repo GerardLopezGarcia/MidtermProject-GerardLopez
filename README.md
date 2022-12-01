@@ -15,6 +15,11 @@ You must use the Money class for all currency and BigDecimal for any other decim
 
 ## UML del Proyecto
 
+![image](https://user-images.githubusercontent.com/72072309/205115044-f51ff48d-1867-48c5-9e4a-a2e052cf4b16.png)
+
+
+## Diagrama de Clases
+
 ![image](https://user-images.githubusercontent.com/72072309/205109567-6210b608-4407-4bc4-9bfe-1e894a61bb04.png)
 
 ## Setup
