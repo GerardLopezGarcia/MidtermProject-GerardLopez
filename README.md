@@ -29,5 +29,6 @@ $ cd IronLibrary
 
 ## Autor
 El proyecto ha sido realizado por:
+
 (☞ﾟヮﾟ)☞   [Gerard López](https://github.com/GerardLopezGarcia)   ☜(ﾟヮﾟ☜)
 
