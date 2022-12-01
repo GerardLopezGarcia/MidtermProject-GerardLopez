@@ -13,6 +13,8 @@ Include unit and integration tests.
 Include robust error handling.
 You must use the Money class for all currency and BigDecimal for any other decimal or large number math.
 
+##UML del Proyecto
+![image](https://user-images.githubusercontent.com/72072309/205109567-6210b608-4407-4bc4-9bfe-1e894a61bb04.png)
 
 ## Setup
 
