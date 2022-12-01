@@ -1,6 +1,6 @@
 ![image](https://user-images.githubusercontent.com/72072309/205083754-e000dd47-8302-4cf8-9791-33826d9d9bf9.png)
 
-> Este proyecto ha sido desarrollado con Java, MySQL y Spring!
+> Este proyecto ha sido desarrollado con Java, MySQL y Spring!🐱‍💻
 
 
 ## Funcionamiento:
@@ -29,5 +29,5 @@ $ cd IronLibrary
 
 ## Autor
 El proyecto ha sido realizado por:
-- [Gerard López](https://github.com/GerardLopezGarcia)
+- (☞ﾟヮﾟ)☞ [Gerard López](https://github.com/GerardLopezGarcia) ☜(ﾟヮﾟ☜)
 
