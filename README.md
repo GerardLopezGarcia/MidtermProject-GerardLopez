@@ -1,14 +1,17 @@
 ![image](https://user-images.githubusercontent.com/72072309/205083754-e000dd47-8302-4cf8-9791-33826d9d9bf9.png)
-> Hi 👋 ! We are Eric, Manel, Iñigo and Agus. </br>
-> We developed a Library Management System application using Java!
-> You may want to take a look on how the app works, so lets get on it!🧐
+
+> Este proyecto ha sido desarrollado con Java, MySQL y Spring!
+
 
 ## Funcionamiento:
 
-As you may imagine, the user of a library app needs to search a book applying certain filters, borrow this book and finally return it.
-All these tasks (and some others) are implemented through the use of commands that will be shown to the user as a number list menu.
-These commands are the following:
-
+Include a Java/Spring Boot backend.
+Everything should be stored in MySQL database tables.
+Include at least 1 GET, POST, PUT/PATCH, and DELETE route.
+Include authentication with Spring Security.
+Include unit and integration tests.
+Include robust error handling.
+You must use the Money class for all currency and BigDecimal for any other decimal or large number math.
 
 
 ## Setup
