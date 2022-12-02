@@ -17,10 +17,29 @@
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="61472802-1e28-45a0-9086-cf486e21ad97" object-ref="schemas/project_database/tables/checking" />
+      <object connection-id="61472802-1e28-45a0-9086-cf486e21ad97" object-ref="schemas/project_database/tables/third_party" />
+      <object connection-id="61472802-1e28-45a0-9086-cf486e21ad97" object-ref="schemas/project_database/tables/student_checking" />
+      <object connection-id="61472802-1e28-45a0-9086-cf486e21ad97" object-ref="schemas/project_database/tables/account_holder" />
+      <object connection-id="61472802-1e28-45a0-9086-cf486e21ad97" object-ref="schemas/project_database/tables/account" />
+      <object connection-id="61472802-1e28-45a0-9086-cf486e21ad97" object-ref="schemas/project_database/tables/admin" />
+      <object connection-id="61472802-1e28-45a0-9086-cf486e21ad97" object-ref="schemas/project_database/tables/credit_card" />
+      <object connection-id="61472802-1e28-45a0-9086-cf486e21ad97" object-ref="schemas/project_database/tables/user" />
+      <object connection-id="61472802-1e28-45a0-9086-cf486e21ad97" object-ref="schemas/project_database/tables/savings" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="61472802-1e28-45a0-9086-cf486e21ad97" dataset="project_database.user" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="61472802-1e28-45a0-9086-cf486e21ad97" dataset="hospital_402.user" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="61472802-1e28-45a0-9086-cf486e21ad97" dataset="project_database.account_holder" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="61472802-1e28-45a0-9086-cf486e21ad97" dataset="project_database.credit_card" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="61472802-1e28-45a0-9086-cf486e21ad97" dataset="project_database.checking" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="61472802-1e28-45a0-9086-cf486e21ad97" dataset="project_database.savings" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="61472802-1e28-45a0-9086-cf486e21ad97" dataset="project_database.admin" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="61472802-1e28-45a0-9086-cf486e21ad97" dataset="project_database.third_party" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="61472802-1e28-45a0-9086-cf486e21ad97" dataset="project_database.student_checking" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="61472802-1e28-45a0-9086-cf486e21ad97" dataset="project_database.account" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
