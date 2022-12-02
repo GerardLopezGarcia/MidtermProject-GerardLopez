@@ -20,7 +20,7 @@ You must use the Money class for all currency and BigDecimal for any other decim
 
 ## Diagrama de Clases
 
-![image](https://user-images.githubusercontent.com/72072309/205109567-6210b608-4407-4bc4-9bfe-1e894a61bb04.png)
+![image](https://user-images.githubusercontent.com/72072309/205298752-b837bcac-42ab-419f-8d06-f752332f9371.png)
 
 ## Setup
 
