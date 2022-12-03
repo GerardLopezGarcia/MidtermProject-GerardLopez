@@ -1,0 +1,57 @@
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n\txsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n\t<modelVersion>4.0.0</modelVersion>\r\n\t<parent>\r\n\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t<artifactId>spring-boot-starter-parent</artifactId>\r\n\t\t<version>2.7.5</version>\r\n\t\t<relativePath/> <!-- lookup parent from repository -->\r\n\t</parent>\r\n\t<groupId>com.ironhack</groupId>\r\n\t<artifactId>Enterprise-Java-Development-4.02</artifactId>\r\n\t<version>0.0.1-SNAPSHOT</version>\r\n\t<name>Enterprise-Java-Development-4.02</name>\r\n\t<description>Demo project for Spring Boot</description>\r\n\t<properties>\r\n\t\t<java.version>19</java.version>\r\n\t</properties>\r\n\t<dependencies>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-data-jpa</artifactId>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-web</artifactId>\r\n\t\t\t<version>2.7.2</version>\r\n\t\t</dependency>\r\n\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-devtools</artifactId>\r\n\t\t\t<scope>runtime</scope>\r\n\t\t\t<optional>true</optional>\r\n\t\t</dependency>\r\n\t\t<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security -->\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-security</artifactId>\r\n\t\t\t<version>2.7.6</version>\r\n\t\t</dependency>\r\n\r\n\t\t<dependency>\r\n\t\t\t<groupId>com.mysql</groupId>\r\n\t\t\t<artifactId>mysql-connector-j</artifactId>\r\n\t\t\t<scope>runtime</scope>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-test</artifactId>\r\n\t\t\t<scope>test</scope>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.projectlombok</groupId>\r\n\t\t\t<artifactId>lombok</artifactId>\r\n\t\t</dependency>\r\n\t</dependencies>\r\n\r\n\t<build>\r\n\t\t<plugins>\r\n\t\t\t<plugin>\r\n\t\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t\t<artifactId>spring-boot-maven-plugin</artifactId>\r\n\t\t\t</plugin>\r\n\t\t</plugins>\r\n\t</build>\r\n\r\n</project>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pom.xml b/pom.xml
+--- a/pom.xml	(revision 02a38a2c1fe7d90f3fd704f1dfb6431d47f3b7e5)
++++ b/pom.xml	(date 1669907180866)
+@@ -39,6 +39,12 @@
+ 			<artifactId>spring-boot-starter-security</artifactId>
+ 			<version>2.7.6</version>
+ 		</dependency>
++		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-validation -->
++		<dependency>
++			<groupId>org.springframework.boot</groupId>
++			<artifactId>spring-boot-starter-validation</artifactId>
++			<version>2.7.6</version>
++		</dependency>
+ 
+ 		<dependency>
+ 			<groupId>com.mysql</groupId>
+Index: src/test/java/com/ironhack/EnterpriseJavaDevelopment42/ApplicationTests.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/com/ironhack/EnterpriseJavaDevelopment42/ApplicationTests.java b/src/test/java/com/ironhack/ApplicationTests.java
+rename from src/test/java/com/ironhack/EnterpriseJavaDevelopment42/ApplicationTests.java
+rename to src/test/java/com/ironhack/ApplicationTests.java
+--- a/src/test/java/com/ironhack/EnterpriseJavaDevelopment42/ApplicationTests.java	(revision 02a38a2c1fe7d90f3fd704f1dfb6431d47f3b7e5)
++++ b/src/test/java/com/ironhack/ApplicationTests.java	(date 1669907274255)
+@@ -1,4 +1,4 @@
+-package com.ironhack.EnterpriseJavaDevelopment42;
++package com.ironhack;
+ 
+ import org.junit.jupiter.api.Test;
+ import org.springframework.boot.test.context.SpringBootTest;
+Index: src/main/java/com/ironhack/Application.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.ironhack;\r\n\r\nimport org.springframework.boot.SpringApplication;\r\nimport org.springframework.boot.autoconfigure.SpringBootApplication;\r\n\r\n@SpringBootApplication\r\npublic class Application {\r\n\r\n\tpublic static void main(String[] args) {\r\n\t\tSpringApplication.run(Application.class, args);\r\n\t}\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/ironhack/Application.java b/src/main/java/com/ironhack/Application.java
+--- a/src/main/java/com/ironhack/Application.java	(revision 02a38a2c1fe7d90f3fd704f1dfb6431d47f3b7e5)
++++ b/src/main/java/com/ironhack/Application.java	(date 1669906836667)
+@@ -5,7 +5,6 @@
+ 
+ @SpringBootApplication
+ public class Application {
+-
+ 	public static void main(String[] args) {
+ 		SpringApplication.run(Application.class, args);
+ 	}
