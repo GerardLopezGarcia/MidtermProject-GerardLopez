@@ -12,37 +12,46 @@
     <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="61472802-1e28-45a0-9086-cf486e21ad97">
+    <connection id="844f92c6-6160-4c22-b0a7-34dd269addde">
       <console name="Connection" type="STANDARD" schema="mysql" session="Main" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files>
-      <object connection-id="61472802-1e28-45a0-9086-cf486e21ad97" object-ref="schemas/project_database/tables/checking" />
-      <object connection-id="61472802-1e28-45a0-9086-cf486e21ad97" object-ref="schemas/project_database/tables/third_party" />
-      <object connection-id="61472802-1e28-45a0-9086-cf486e21ad97" object-ref="schemas/project_database/tables/student_checking" />
-      <object connection-id="61472802-1e28-45a0-9086-cf486e21ad97" object-ref="schemas/project_database/tables/account_holder" />
-      <object connection-id="61472802-1e28-45a0-9086-cf486e21ad97" object-ref="schemas/project_database/tables/account" />
-      <object connection-id="61472802-1e28-45a0-9086-cf486e21ad97" object-ref="schemas/project_database/tables/admin" />
-      <object connection-id="61472802-1e28-45a0-9086-cf486e21ad97" object-ref="schemas/project_database/tables/credit_card" />
-      <object connection-id="61472802-1e28-45a0-9086-cf486e21ad97" object-ref="schemas/project_database/tables/user" />
-      <object connection-id="61472802-1e28-45a0-9086-cf486e21ad97" object-ref="schemas/project_database/tables/savings" />
+      <object connection-id="844f92c6-6160-4c22-b0a7-34dd269addde" object-ref="schemas/project_database/tables/admin" />
+      <object connection-id="844f92c6-6160-4c22-b0a7-34dd269addde" object-ref="schemas/project_database/tables/credit_card" />
+      <object connection-id="844f92c6-6160-4c22-b0a7-34dd269addde" object-ref="schemas/project_database/tables/account" />
+      <object connection-id="844f92c6-6160-4c22-b0a7-34dd269addde" object-ref="schemas/project_database/tables/third_party" />
+      <object connection-id="844f92c6-6160-4c22-b0a7-34dd269addde" object-ref="schemas/project_database/tables/user" />
+      <object connection-id="844f92c6-6160-4c22-b0a7-34dd269addde" object-ref="schemas/project_database/tables/account_holder" />
+      <object connection-id="844f92c6-6160-4c22-b0a7-34dd269addde" object-ref="schemas/project_database/tables/checking" />
+      <object connection-id="844f92c6-6160-4c22-b0a7-34dd269addde" object-ref="schemas/project_database/tables/student_checking" />
     </open-files>
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
-    <filter-actions connection-id="61472802-1e28-45a0-9086-cf486e21ad97" dataset="project_database.user" active-filter-id="EMPTY_FILTER" />
-    <filter-actions connection-id="61472802-1e28-45a0-9086-cf486e21ad97" dataset="hospital_402.user" active-filter-id="EMPTY_FILTER" />
-    <filter-actions connection-id="61472802-1e28-45a0-9086-cf486e21ad97" dataset="project_database.account_holder" active-filter-id="EMPTY_FILTER" />
-    <filter-actions connection-id="61472802-1e28-45a0-9086-cf486e21ad97" dataset="project_database.credit_card" active-filter-id="EMPTY_FILTER" />
-    <filter-actions connection-id="61472802-1e28-45a0-9086-cf486e21ad97" dataset="project_database.checking" active-filter-id="EMPTY_FILTER" />
-    <filter-actions connection-id="61472802-1e28-45a0-9086-cf486e21ad97" dataset="project_database.savings" active-filter-id="EMPTY_FILTER" />
-    <filter-actions connection-id="61472802-1e28-45a0-9086-cf486e21ad97" dataset="project_database.admin" active-filter-id="EMPTY_FILTER" />
-    <filter-actions connection-id="61472802-1e28-45a0-9086-cf486e21ad97" dataset="project_database.third_party" active-filter-id="EMPTY_FILTER" />
-    <filter-actions connection-id="61472802-1e28-45a0-9086-cf486e21ad97" dataset="project_database.student_checking" active-filter-id="EMPTY_FILTER" />
-    <filter-actions connection-id="61472802-1e28-45a0-9086-cf486e21ad97" dataset="project_database.account" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="844f92c6-6160-4c22-b0a7-34dd269addde" dataset="project_database.user" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="844f92c6-6160-4c22-b0a7-34dd269addde" dataset="project_database.account_holder" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="844f92c6-6160-4c22-b0a7-34dd269addde" dataset="project_database.credit_card" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="844f92c6-6160-4c22-b0a7-34dd269addde" dataset="project_database.checking" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="844f92c6-6160-4c22-b0a7-34dd269addde" dataset="project_database.savings" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="844f92c6-6160-4c22-b0a7-34dd269addde" dataset="project_database.admin" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="844f92c6-6160-4c22-b0a7-34dd269addde" dataset="project_database.student_checking" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="844f92c6-6160-4c22-b0a7-34dd269addde" dataset="project_database.third_party" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="844f92c6-6160-4c22-b0a7-34dd269addde" dataset="project_database.account" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
+  </component>
+  <component name="DBNavigator.Project.ExecutionManager">
+    <retain-sticky-names value="false" />
+  </component>
+  <component name="DBNavigator.Project.MethodExecutionManager">
+    <method-browser />
+    <execution-history>
+      <group-entries value="true" />
+      <execution-inputs />
+    </execution-history>
+    <argument-values-cache />
   </component>
   <component name="DBNavigator.Project.ObjectQuickFilterManager">
     <last-used-operator value="EQUAL" />
@@ -50,7 +59,7 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="61472802-1e28-45a0-9086-cf486e21ad97" active="true" signed="true">
+      <connection id="844f92c6-6160-4c22-b0a7-34dd269addde" active="true" signed="true">
         <database>
           <name value="Connection" />
           <description value="" />
