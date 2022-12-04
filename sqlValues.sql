@@ -1,16 +1,15 @@
--- INSERT INTO user (name) VALUES
--- ('Erin Carr'),
--- ('Naomi Barr'),
--- ('Elinor Mcgee'),
--- ('Hana Jennings'),
--- ('Luisa Foley'),
--- ('Hamzah Mejia'),
--- ('Administrador1'),
--- ('Administrador2'),
--- ('UsuarioExterno1'),
--- ('UsuarioExterno2'),
--- ('UsuarioExterno3');
-
+-- INSERT INTO user (name,password,role) VALUES
+-- ('Erin Carr','ironhack','USER'),
+-- ('Naomi Barr','ironhack1','USER'),
+-- ('Elinor Mcgee','ironhack2','USER'),
+-- ('Hana Jennings','ironhack3','USER'),
+-- ('Luisa Foley','ironhack4','USER'),
+-- ('Hamzah Mejia','ironhack5','USER'),
+-- ('Administrador1','Administrador1','ADMIN'),
+-- ('Administrador2','Administrador2','ADMIN'),
+-- ('UsuarioExterno1','UsuarioExterno1','CONTRIBUTOR'),
+-- ('UsuarioExterno2','UsuarioExterno2','CONTRIBUTOR'),
+-- ('UsuarioExterno3','UsuarioExterno3','CONTRIBUTOR');
 
 -- INSERT INTO account_holder (date_of_birth,mailing_city,mailing_house,mailing_steet,city,house_address,street,name) VALUES
 -- ('1990-01-01','Barcelona','1º 2ª','Aribau','Barcelona','1º 2ª','Aribau','Erin Carr'),
@@ -38,12 +37,12 @@
 -- (1000,'$','2001-01-21',40,'Hamzah Mejia',null);
 
 -- INSERT INTO account (amount,currency,creation_date,penalty_fee,holder_id,secondary_holder_id) VALUES
--- (1000,'$','2001-01-21',40,'Erin Carr','Hana Jennings'),
--- (1000,'$','2001-01-21',40,'Naomi Barr','Luisa Foley'),
--- (1000,'$','2001-01-21',40,'Elinor Mcgee','Hamzah Mejia'),
--- (1000,'$','2001-01-21',40,'Hana Jennings',null),
--- (1000,'$','2001-01-21',40,'Luisa Foley',null),
--- (1000,'$','2001-01-21',40,'Hamzah Mejia',null);
+-- (1000,'USD','2001-01-21',40,'Erin Carr','Hana Jennings'),
+-- (1000,'USD','2001-01-21',40,'Naomi Barr','Luisa Foley'),
+-- (1000,'USD','2001-01-21',40,'Elinor Mcgee','Hamzah Mejia'),
+-- (1000,'USD','2001-01-21',40,'Hana Jennings',null),
+-- (1000,'USD','2001-01-21',40,'Luisa Foley',null),
+-- (1000,'USD','2001-01-21',40,'Hamzah Mejia',null);
 
 -- INSERT INTO checking (minimum_balance,monthly_maintenance_fee,secret_key,status,id) VALUES
 -- (250,12,'ironhack','ACTIVE',1),
@@ -59,3 +58,14 @@
 
 -- Ampliación de interest_rate para poder añadir 4 decimales
 -- ALTER TABLE savings MODIFY COLUMN interest_rate decimal(19,4) DEFAULT NULL;
+
+-- SET SQL_SAFE_UPDATES = 0;
+-- DELETE FROM project_database.account WHERE id = 10;
+-- SELECT * FROM account;
+
+-- SET SQL_SAFE_UPDATES = 0;
+-- DELETE FROM project_database.admin;
+-- DELETE FROM project_database.third_party;
+-- DELETE FROM project_database.account_holder;
+-- DELETE FROM project_database.user;
+-- SELECT * FROM user;
