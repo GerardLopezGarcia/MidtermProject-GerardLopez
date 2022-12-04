@@ -10,8 +10,14 @@ public class Money {
     private static final Currency USD = Currency.getInstance("USD");
     private static final RoundingMode DEFAULT_ROUNDING = RoundingMode.HALF_EVEN;
 
-    private final Currency currency;
+    private Currency currency;
     private BigDecimal amount;
+
+    //Default constructor for Hibernate
+
+
+    public Money() {
+    }
 
     /**
      * Class constructor specifying amount, currency, and rounding

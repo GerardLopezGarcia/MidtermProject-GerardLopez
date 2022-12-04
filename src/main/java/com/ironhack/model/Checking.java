@@ -67,4 +67,5 @@ public class Checking extends Account{
     public void setStatus(Status status) {
         this.status = status;
     }
+
 }
