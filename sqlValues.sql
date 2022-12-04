@@ -1,16 +1,15 @@
--- INSERT INTO user (name) VALUES
--- ('Erin Carr'),
--- ('Naomi Barr'),
--- ('Elinor Mcgee'),
--- ('Hana Jennings'),
--- ('Luisa Foley'),
--- ('Hamzah Mejia'),
--- ('Administrador1'),
--- ('Administrador2'),
--- ('UsuarioExterno1'),
--- ('UsuarioExterno2'),
--- ('UsuarioExterno3');
-
+-- INSERT INTO user (name,password,role) VALUES
+-- ('Erin Carr','ironhack','USER'),
+-- ('Naomi Barr','ironhack1','USER'),
+-- ('Elinor Mcgee','ironhack2','USER'),
+-- ('Hana Jennings','ironhack3','USER'),
+-- ('Luisa Foley','ironhack4','USER'),
+-- ('Hamzah Mejia','ironhack5','USER'),
+-- ('Administrador1','Administrador1','ADMIN'),
+-- ('Administrador2','Administrador2','ADMIN'),
+-- ('UsuarioExterno1','UsuarioExterno1','CONTRIBUTOR'),
+-- ('UsuarioExterno2','UsuarioExterno2','CONTRIBUTOR'),
+-- ('UsuarioExterno3','UsuarioExterno3','CONTRIBUTOR');
 
 -- INSERT INTO account_holder (date_of_birth,mailing_city,mailing_house,mailing_steet,city,house_address,street,name) VALUES
 -- ('1990-01-01','Barcelona','1º 2ª','Aribau','Barcelona','1º 2ª','Aribau','Erin Carr'),
@@ -65,5 +64,8 @@
 -- SELECT * FROM account;
 
 -- SET SQL_SAFE_UPDATES = 0;
--- DELETE FROM project_database.student_checking WHERE id = 10;
--- SELECT * FROM student_checking;
+-- DELETE FROM project_database.admin;
+-- DELETE FROM project_database.third_party;
+-- DELETE FROM project_database.account_holder;
+-- DELETE FROM project_database.user;
+-- SELECT * FROM user;
