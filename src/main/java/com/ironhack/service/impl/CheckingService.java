@@ -8,6 +8,8 @@ import com.ironhack.repository.StudentCheckingRepository;
 import com.ironhack.service.interfaces.ICheckingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import static com.ironhack.model.Constants.ANSI_CYAN;
+import static com.ironhack.model.Constants.ANSI_RESET;
 
 import java.time.LocalDate;
 import java.util.Optional;
@@ -32,9 +34,11 @@ public class CheckingService implements ICheckingService {
       if(optionalsecondaryOwner.isEmpty()){
           StudentChecking studentChecking = new StudentChecking(checking.getBalance(),checking.getPrimaryOwner(),checking.getCreationDate(),checking.getPenaltyFee(),checking.getSecretKey(),checking.getStatus());
           studentCheckingRepository.save(studentChecking);
+          System.out.println(ANSI_CYAN + "Edad del Usuario : "+ accountHolderAge + " ,cuenta Joven creada" + ANSI_RESET);
       }else{
           StudentChecking studentChecking = new StudentChecking(checking.getBalance(),checking.getPrimaryOwner(),checking.getSecondaryOwner(),checking.getCreationDate(),checking.getPenaltyFee(),checking.getSecretKey(),checking.getStatus());
           studentCheckingRepository.save(studentChecking);
+          System.out.println(ANSI_CYAN + "Edad del Usuario : "+ accountHolderAge + " ,cuenta Joven creada" + ANSI_RESET);
       }
     }
 }

@@ -38,12 +38,12 @@
 -- (1000,'$','2001-01-21',40,'Hamzah Mejia',null);
 
 -- INSERT INTO account (amount,currency,creation_date,penalty_fee,holder_id,secondary_holder_id) VALUES
--- (1000,'$','2001-01-21',40,'Erin Carr','Hana Jennings'),
--- (1000,'$','2001-01-21',40,'Naomi Barr','Luisa Foley'),
--- (1000,'$','2001-01-21',40,'Elinor Mcgee','Hamzah Mejia'),
--- (1000,'$','2001-01-21',40,'Hana Jennings',null),
--- (1000,'$','2001-01-21',40,'Luisa Foley',null),
--- (1000,'$','2001-01-21',40,'Hamzah Mejia',null);
+-- (1000,'USD','2001-01-21',40,'Erin Carr','Hana Jennings'),
+-- (1000,'USD','2001-01-21',40,'Naomi Barr','Luisa Foley'),
+-- (1000,'USD','2001-01-21',40,'Elinor Mcgee','Hamzah Mejia'),
+-- (1000,'USD','2001-01-21',40,'Hana Jennings',null),
+-- (1000,'USD','2001-01-21',40,'Luisa Foley',null),
+-- (1000,'USD','2001-01-21',40,'Hamzah Mejia',null);
 
 -- INSERT INTO checking (minimum_balance,monthly_maintenance_fee,secret_key,status,id) VALUES
 -- (250,12,'ironhack','ACTIVE',1),
@@ -59,3 +59,11 @@
 
 -- Ampliación de interest_rate para poder añadir 4 decimales
 -- ALTER TABLE savings MODIFY COLUMN interest_rate decimal(19,4) DEFAULT NULL;
+
+-- SET SQL_SAFE_UPDATES = 0;
+-- DELETE FROM project_database.account WHERE id = 10;
+-- SELECT * FROM account;
+
+-- SET SQL_SAFE_UPDATES = 0;
+-- DELETE FROM project_database.student_checking WHERE id = 10;
+-- SELECT * FROM student_checking;
