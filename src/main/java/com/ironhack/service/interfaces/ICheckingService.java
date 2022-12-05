@@ -1,5 +1,6 @@
 package com.ironhack.service.interfaces;
 
+import com.ironhack.controller.dto.TransferDTO;
 import com.ironhack.controller.dto.UserDTO;
 import com.ironhack.model.Account;
 import com.ironhack.model.Checking;
@@ -12,5 +13,5 @@ public interface ICheckingService {
 
     List<Account> getMyAccountsByOwner(String name, String password);
 
-    void transferMoney(UserDTO userDTO, Integer senderId, BigDecimal amount, Integer receiverId);
+    void transferMoney(TransferDTO transferDTO);
 }

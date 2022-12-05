@@ -1,13 +1,15 @@
 package com.ironhack.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.Optional;
+
 
 @Entity
 @PrimaryKeyJoinColumn(name = "id")
 public class Checking extends Account{
+    @NotEmpty(message = "Introduzca una contraseña")
     private String secretKey;
 
     private BigDecimal minimumBalance;
@@ -19,20 +21,21 @@ public class Checking extends Account{
     public Checking() {
     }
 
+
     //Constructor with secondaryOwner
     public Checking(Money balance, AccountHolder primaryOwner, AccountHolder secondaryOwner, LocalDate creationDate, BigDecimal penaltyFee, String secretKey, BigDecimal minimumBalance, BigDecimal monthlyMaintenanceFee, Status status) {
         super(balance, primaryOwner, secondaryOwner, creationDate, penaltyFee);
         this.secretKey = secretKey;
-        this.minimumBalance = minimumBalance;
-        this.monthlyMaintenanceFee = monthlyMaintenanceFee;
+        setMinimumBalance(minimumBalance);
+        setMonthlyMaintenanceFee(monthlyMaintenanceFee);
         this.status = status;
     }
 
     public Checking(Money balance, AccountHolder primaryOwner, LocalDate creationDate, BigDecimal penaltyFee, String secretKey, BigDecimal minimumBalance, BigDecimal monthlyMaintenanceFee, Status status) {
         super(balance, primaryOwner, creationDate, penaltyFee);
         this.secretKey = secretKey;
-        this.minimumBalance = minimumBalance;
-        this.monthlyMaintenanceFee = monthlyMaintenanceFee;
+        setMinimumBalance(minimumBalance);
+        setMonthlyMaintenanceFee(monthlyMaintenanceFee);
         this.status = status;
     }
 
@@ -49,7 +52,7 @@ public class Checking extends Account{
     }
 
     public void setMinimumBalance(BigDecimal minimumBalance) {
-        this.minimumBalance = minimumBalance;
+        this.minimumBalance = minimumBalance == null ? new BigDecimal("250") : minimumBalance;
     }
 
     public BigDecimal getMonthlyMaintenanceFee() {
@@ -57,7 +60,7 @@ public class Checking extends Account{
     }
 
     public void setMonthlyMaintenanceFee(BigDecimal monthlyMaintenanceFee) {
-        this.monthlyMaintenanceFee = monthlyMaintenanceFee;
+        this.monthlyMaintenanceFee = monthlyMaintenanceFee == null ? new BigDecimal("12") : monthlyMaintenanceFee;
     }
 
     public Status getStatus() {
