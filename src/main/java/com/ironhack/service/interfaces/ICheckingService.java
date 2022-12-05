@@ -1,7 +1,6 @@
 package com.ironhack.service.interfaces;
 
 import com.ironhack.controller.dto.TransferDTO;
-import com.ironhack.controller.dto.UserDTO;
 import com.ironhack.model.Account;
 import com.ironhack.model.Checking;
 
