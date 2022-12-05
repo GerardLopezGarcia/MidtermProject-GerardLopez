@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.PrimaryKeyJoinColumn;
+import javax.validation.constraints.NotEmpty;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Optional;
@@ -11,6 +12,7 @@ import java.util.Optional;
 @Entity
 @PrimaryKeyJoinColumn(name = "id")
 public class StudentChecking extends Account {
+    @NotEmpty(message = "Introduzca una contraseña")
     private String secretKey;
     @Enumerated(EnumType.STRING)
     private Status status;

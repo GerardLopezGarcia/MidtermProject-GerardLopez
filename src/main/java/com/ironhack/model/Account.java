@@ -1,6 +1,7 @@
 package com.ironhack.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Date;
@@ -35,15 +36,15 @@ public class Account {
         this.balance = balance;
         this.primaryOwner = primaryOwner;
         this.secondaryOwner = secondaryOwner;
-        this.creationDate = creationDate;
-        this.penaltyFee = penaltyFee;
+        setCreationDate(creationDate);
+        setPenaltyFee(penaltyFee);
     }
 
     public Account(Money balance, AccountHolder primaryOwner, LocalDate creationDate, BigDecimal penaltyFee) {
         this.balance = balance;
         this.primaryOwner = primaryOwner;
-        this.creationDate = creationDate;
-        this.penaltyFee = penaltyFee;
+        setCreationDate(creationDate);
+        setPenaltyFee(penaltyFee);
     }
 
     public Integer getId() {
@@ -83,7 +84,7 @@ public class Account {
     }
 
     public void setCreationDate(LocalDate creationDate) {
-        this.creationDate = creationDate;
+        this.creationDate = creationDate == null ? LocalDate.now() : creationDate;
     }
 
     public BigDecimal getPenaltyFee() {
@@ -91,7 +92,18 @@ public class Account {
     }
 
     public void setPenaltyFee(BigDecimal penaltyFee) {
-        this.penaltyFee = penaltyFee;
+        this.penaltyFee = penaltyFee == null ? new BigDecimal("40") : penaltyFee;
     }
 
+    @Override
+    public String toString() {
+        return "Account{" +
+                "id=" + id +
+                ", balance=" + balance +
+                ", primaryOwner=" + primaryOwner +
+                ", secondaryOwner=" + secondaryOwner +
+                ", creationDate=" + creationDate +
+                ", penaltyFee=" + penaltyFee +
+                '}';
+    }
 }
