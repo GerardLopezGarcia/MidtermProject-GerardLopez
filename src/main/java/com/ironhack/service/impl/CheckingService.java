@@ -1,7 +1,6 @@
 package com.ironhack.service.impl;
 
 import com.ironhack.controller.dto.TransferDTO;
-import com.ironhack.controller.dto.UserDTO;
 import com.ironhack.model.*;
 import com.ironhack.repository.*;
 import com.ironhack.service.interfaces.ICheckingService;
