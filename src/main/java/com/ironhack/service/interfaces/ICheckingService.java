@@ -13,4 +13,6 @@ public interface ICheckingService {
     List<Account> getMyAccountsByOwner(String name, String password);
 
     void transferMoney(TransferDTO transferDTO);
+
+    void deleteChecking(Integer id);
 }

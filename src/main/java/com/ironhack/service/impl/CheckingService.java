@@ -41,17 +41,18 @@ public class CheckingService implements ICheckingService {
       if(accountHolderAge>=24) {
           checkingRepository.save(checking);
           System.out.println(ANSI_CYAN + "Edad del Usuario : "+ accountHolderAge + " ,cuenta bancaria creada" + ANSI_RESET);
-      }
-      //if the primaryOwner is less than 24, a StudentChecking account should be created
-      Optional<AccountHolder> optionalsecondaryOwner = Optional.ofNullable(checking.getSecondaryOwner());
-      if(optionalsecondaryOwner.isEmpty()){
-          StudentChecking studentChecking = new StudentChecking(checking.getBalance(),checking.getPrimaryOwner(),checking.getCreationDate(),checking.getPenaltyFee(),checking.getSecretKey(),checking.getStatus());
-          studentCheckingRepository.save(studentChecking);
-          System.out.println(ANSI_CYAN + "Edad del Usuario : "+ accountHolderAge + " ,cuenta Joven creada" + ANSI_RESET);
       }else{
-          StudentChecking studentChecking = new StudentChecking(checking.getBalance(),checking.getPrimaryOwner(),checking.getSecondaryOwner(),checking.getCreationDate(),checking.getPenaltyFee(),checking.getSecretKey(),checking.getStatus());
-          studentCheckingRepository.save(studentChecking);
-          System.out.println(ANSI_CYAN + "Edad del Usuario : "+ accountHolderAge + " ,cuenta Joven creada" + ANSI_RESET);
+          //if the primaryOwner is less than 24, a StudentChecking account should be created
+          Optional<AccountHolder> optionalsecondaryOwner = Optional.ofNullable(checking.getSecondaryOwner());
+          if(optionalsecondaryOwner.isEmpty()){
+              StudentChecking studentChecking = new StudentChecking(checking.getBalance(),checking.getPrimaryOwner(),checking.getCreationDate(),checking.getPenaltyFee(),checking.getSecretKey(),checking.getStatus());
+              studentCheckingRepository.save(studentChecking);
+              System.out.println(ANSI_CYAN + "Edad del Usuario : "+ accountHolderAge + " ,cuenta Joven creada" + ANSI_RESET);
+          }else{
+              StudentChecking studentChecking = new StudentChecking(checking.getBalance(),checking.getPrimaryOwner(),checking.getSecondaryOwner(),checking.getCreationDate(),checking.getPenaltyFee(),checking.getSecretKey(),checking.getStatus());
+              studentCheckingRepository.save(studentChecking);
+              System.out.println(ANSI_CYAN + "Edad del Usuario : "+ accountHolderAge + " ,cuenta Joven creada" + ANSI_RESET);
+          }
       }
     }
 
@@ -113,6 +114,8 @@ public class CheckingService implements ICheckingService {
 
     }
 
+
+
     public void transferFunds(Optional<Account> senderAccount,Optional<Account> receiverAccount,TransferDTO transferDTO){
 
         senderAccount.get().getBalance().decreaseAmount(transferDTO.getAmount());
@@ -159,5 +162,12 @@ public class CheckingService implements ICheckingService {
 
     public void validateEmptyAccount(Optional<Account> account,TransferDTO transferDTO){
         if(account.isEmpty())throw new ResponseStatusException(HttpStatus.NOT_FOUND,"Cuenta de destino con id: " + transferDTO.getReceiverId() + " no encontrada");
+    }
+
+
+    public void deleteChecking(Integer id) {
+        Optional<Checking> optionalChecking = checkingRepository.findById(id);
+        if(optionalChecking.isEmpty())throw new ResponseStatusException(HttpStatus.NOT_FOUND,"La cuenta asociada a este id no existe");
+        checkingRepository.deleteById(id);
     }
 }
