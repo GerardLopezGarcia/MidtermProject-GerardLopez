@@ -8,7 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import javax.swing.text.html.Option;
 import java.math.BigDecimal;
 import java.util.Optional;
 
@@ -18,7 +17,7 @@ public class UserService implements IUserService {
     @Autowired
     AccountHolderRepository accountHolderRepository;
     @Autowired
-    UserReposiroty userReposiroty;
+    UserRepository userRepository;
     @Autowired
     AdminRepository adminRepository;
     @Autowired

@@ -96,7 +96,7 @@ public class AccountsControllerTest {
 
         String body = objectMapper.writeValueAsString(transferDTO);
 
-        mockMvc.perform(patch("/thirdpartyusers/ironhack").content(body).contentType(MediaType.APPLICATION_JSON))
+        mockMvc.perform(patch("/thirdpartyusers/$2a$10$6IqUFv0r2wa8wYh9GkfgB.Csa7zn78oMCs.Y1zgXMyXdWcaLiznMK").content(body).contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNoContent())
                 .andReturn();
 
@@ -107,7 +107,7 @@ public class AccountsControllerTest {
 
         System.out.println(mvcResult.getResponse().getContentAsString());
         //Hay que ajustar las cantidades para cada test
-        assertTrue(mvcResult.getResponse().getContentAsString().contains("1800"));
+        assertTrue(mvcResult.getResponse().getContentAsString().contains("2000"));
 
 
     }

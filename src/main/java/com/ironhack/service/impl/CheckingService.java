@@ -28,7 +28,7 @@ public class CheckingService implements ICheckingService {
     @Autowired
     AccountRepository accountRepository;
     @Autowired
-    UserReposiroty userReposiroty;
+    UserRepository userRepository;
     @Autowired
     SavingsRepository savingsRepository;
     @Autowired
@@ -61,7 +61,7 @@ public class CheckingService implements ICheckingService {
     //spring security context @autentication!
     public List<Account> getMyAccountsByOwner(String name, String password) {
 
-        Optional<User> optionalUser = userReposiroty.findByName(name);
+        Optional<User> optionalUser = userRepository.findByName(name);
         if(optionalUser.isEmpty())throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Usuario no encontrado");
         if(optionalUser.get().getPassword().equals(password)){
             List<Account> accountList = new ArrayList<>();

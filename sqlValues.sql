@@ -64,13 +64,13 @@
 -- SELECT * FROM student_checking;
 
 -- SET SQL_SAFE_UPDATES = 0;
--- DELETE FROM project_database.checking WHERE id = 14;
--- SELECT * FROM checking;
+-- DELETE FROM project_database.user WHERE name = 'Juan Rodriguez';
+-- SELECT * FROM user;
 
 -- SET SQL_SAFE_UPDATES = 0;
 -- DELETE FROM project_database.account WHERE id = 15;
 -- SELECT * FROM account;
 
--- UPDATE account
--- SET amount = 1000
--- WHERE id = 1;
+-- UPDATE third_party
+-- SET hashed_key = '$2a$10$gad48gowT0Ir83JoFlyVMOcNozEO7usTahC.z8LzeB55EDwQV139m'
+-- WHERE name = 'UsuarioExterno3';

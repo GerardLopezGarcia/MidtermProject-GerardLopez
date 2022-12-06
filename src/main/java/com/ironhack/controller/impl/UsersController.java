@@ -5,7 +5,6 @@ import com.ironhack.controller.interfaces.IUsersController;
 import com.ironhack.model.*;
 import com.ironhack.repository.*;
 import com.ironhack.service.impl.UserService;
-import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +17,7 @@ public class UsersController implements IUsersController {
     @Autowired
     AccountHolderRepository accountHolderRepository;
     @Autowired
-    UserReposiroty userReposiroty;
+    UserRepository userRepository;
     @Autowired
     AdminRepository adminRepository;
     @Autowired
@@ -39,7 +38,7 @@ public class UsersController implements IUsersController {
     @GetMapping("/users")
     @ResponseStatus(HttpStatus.OK)
     public List<User> getAllUsers(){
-        return userReposiroty.findAll();
+        return userRepository.findAll();
     }
 
     @GetMapping("/admins")
@@ -63,7 +62,7 @@ public class UsersController implements IUsersController {
     @PostMapping("/users")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public void saveUsers(@RequestBody @Valid User user){
-        userReposiroty.save(user);
+        userRepository.save(user);
     }
 
     @PostMapping("/admins")
