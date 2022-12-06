@@ -60,11 +60,15 @@
 -- ALTER TABLE savings MODIFY COLUMN interest_rate decimal(19,4) DEFAULT NULL;
 
 -- SET SQL_SAFE_UPDATES = 0;
--- DELETE FROM project_database.student_checking WHERE id = 11;
+-- DELETE FROM project_database.student_checking WHERE id = 15;
 -- SELECT * FROM student_checking;
 
 -- SET SQL_SAFE_UPDATES = 0;
--- DELETE FROM project_database.account WHERE id = 11;
+-- DELETE FROM project_database.checking WHERE id = 14;
+-- SELECT * FROM checking;
+
+-- SET SQL_SAFE_UPDATES = 0;
+-- DELETE FROM project_database.account WHERE id = 15;
 -- SELECT * FROM account;
 
 -- UPDATE account

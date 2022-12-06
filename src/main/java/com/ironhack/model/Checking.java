@@ -39,6 +39,7 @@ public class Checking extends Account{
         this.status = status;
     }
 
+
     public String getSecretKey() {
         return secretKey;
     }

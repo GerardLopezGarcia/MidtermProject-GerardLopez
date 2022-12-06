@@ -50,4 +50,12 @@ public class CheckingController implements ICheckingController {
     public void transferMoney(@RequestBody @Valid TransferDTO transferDTO){
         checkingService.transferMoney(transferDTO);
     }
+
+    //DELETE checking
+    @DeleteMapping("/checkings/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteChecking(@PathVariable Integer id){
+        checkingService.deleteChecking(id);
+    }
+
 }

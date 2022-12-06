@@ -20,6 +20,14 @@ public class TransferDTO {
     public TransferDTO() {
     }
 
+    public TransferDTO(String name, String password, Integer senderId, BigDecimal amount, Integer receiverId) {
+        this.name = name;
+        this.password = password;
+        this.senderId = senderId;
+        this.amount = amount;
+        this.receiverId = receiverId;
+    }
+
     public Integer getSenderId() {
         return senderId;
     }
