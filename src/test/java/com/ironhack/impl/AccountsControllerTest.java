@@ -90,6 +90,27 @@ public class AccountsControllerTest {
 
     }
 
+    @Test
+    void transferMoney_From_ThirdUser() throws Exception {
+        TransferDTO transferDTO = new TransferDTO("Hamzah Mejia","ironhack5",new BigDecimal("100"),3);
+
+        String body = objectMapper.writeValueAsString(transferDTO);
+
+        mockMvc.perform(patch("/thirdpartyusers/ironhack").content(body).contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isNoContent())
+                .andReturn();
+
+        MvcResult mvcResult = mockMvc.perform(get("/accounts"))
+                .andExpect(status().isOk())
+                .andExpect(MockMvcResultMatchers.content().contentType((MediaType.APPLICATION_JSON)))
+                .andReturn();
+
+        System.out.println(mvcResult.getResponse().getContentAsString());
+        //Hay que ajustar las cantidades para cada test
+        assertTrue(mvcResult.getResponse().getContentAsString().contains("1800"));
+
+
+    }
     //CheckingAccount class GET
     @Test
     void getCheckings() throws Exception {

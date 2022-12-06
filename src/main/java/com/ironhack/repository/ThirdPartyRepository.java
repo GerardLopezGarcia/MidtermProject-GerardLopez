@@ -7,8 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface ThirdPartyRepository extends JpaRepository<ThirdParty,Integer> {
-    void deleteById(String name);
-
-    Optional<ThirdParty> findById(String name);
+public interface ThirdPartyRepository extends JpaRepository<ThirdParty,String> {
+    Optional<ThirdParty> findByHashedKey(String hashedKey);
 }

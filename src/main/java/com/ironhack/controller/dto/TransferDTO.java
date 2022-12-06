@@ -9,7 +9,6 @@ public class TransferDTO {
     private String name;
     @NotEmpty(message = "Introduzca su contraseña porfavor")
     private String password;
-    @NotNull(message = "Introduzca su id de cuenta porfavor")
     private Integer senderId;
     @NotNull(message = "Introduzca la cantidad a transferir porfavor")
     private BigDecimal amount;
@@ -24,6 +23,13 @@ public class TransferDTO {
         this.name = name;
         this.password = password;
         this.senderId = senderId;
+        this.amount = amount;
+        this.receiverId = receiverId;
+    }
+
+    public TransferDTO(String name, String password, BigDecimal amount, Integer receiverId) {
+        this.name = name;
+        this.password = password;
         this.amount = amount;
         this.receiverId = receiverId;
     }
