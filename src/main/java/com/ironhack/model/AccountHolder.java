@@ -38,8 +38,6 @@ public class AccountHolder extends User{
     public AccountHolder() {
     }
     //Override Constructor with optional mailingAddress
-
-
     public AccountHolder(String name, String password, String role, LocalDate dateOfBirth, Address primaryAddress, Address mailingAddress) {
         super(name, password, role);
         this.dateOfBirth = dateOfBirth;
@@ -52,6 +50,8 @@ public class AccountHolder extends User{
         this.dateOfBirth = dateOfBirth;
         this.primaryAddress = primaryAddress;
     }
+
+
 
     public LocalDate getDateOfBirth() {
         return dateOfBirth;

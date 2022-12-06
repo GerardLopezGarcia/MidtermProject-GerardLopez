@@ -15,4 +15,6 @@ public interface ICheckingService {
     void transferMoney(TransferDTO transferDTO);
 
     void deleteChecking(Integer id);
+
+    void thirdPartyTransferMoney(TransferDTO transferDTO, String hashedKey);
 }

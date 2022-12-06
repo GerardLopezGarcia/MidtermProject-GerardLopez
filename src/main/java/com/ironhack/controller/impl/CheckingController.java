@@ -50,6 +50,12 @@ public class CheckingController implements ICheckingController {
     public void transferMoney(@RequestBody @Valid TransferDTO transferDTO){
         checkingService.transferMoney(transferDTO);
     }
+    //Transfers para terceros
+    @PatchMapping("/thirdpartyusers/{hashedKey}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void transferMoney(@RequestBody @Valid TransferDTO transferDTO, @PathVariable String hashedKey){
+        checkingService.thirdPartyTransferMoney(transferDTO,hashedKey);
+    }
 
     //DELETE checking
     @DeleteMapping("/checkings/{id}")

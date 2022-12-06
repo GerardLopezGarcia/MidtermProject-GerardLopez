@@ -31,6 +31,8 @@ public class CheckingService implements ICheckingService {
     UserReposiroty userReposiroty;
     @Autowired
     SavingsRepository savingsRepository;
+    @Autowired
+    ThirdPartyRepository thirdPartyRepository;
 
 
     public void saveCheckingAccount(Checking checking) {
@@ -80,7 +82,7 @@ public class CheckingService implements ICheckingService {
         Optional<Account> optionalAccount = accountRepository.findById(transferDTO.getSenderId());
         Optional<Account> optionalReceiverAccount = accountRepository.findById(transferDTO.getReceiverId());
         validateEmptyAccount(optionalAccount,transferDTO);
-        validateEmptyAccount(optionalAccount,transferDTO);
+        validateEmptyAccount(optionalReceiverAccount,transferDTO);
 
         String primaryOwnerName = optionalAccount.get().getPrimaryOwner().getName();
         String secondaryOwnerName = optionalAccount.get().getSecondaryOwner() ==null? "" : optionalAccount.get().getSecondaryOwner().getName();
@@ -113,7 +115,40 @@ public class CheckingService implements ICheckingService {
         }
 
     }
+    public void thirdPartyTransferMoney(TransferDTO transferDTO, String hashedKey) {
 
+
+        //comprobación de que tanto sender como receiver existen
+        Optional<Account> optionalReceiverAccount = accountRepository.findById(transferDTO.getReceiverId());
+        validateEmptyAccount(optionalReceiverAccount,transferDTO);
+        Optional<ThirdParty> optionalThirdParty = thirdPartyRepository.findByHashedKey(hashedKey);
+        if(optionalThirdParty.isEmpty())throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Contraseña 'hashedKey' incorrecta");
+
+        String primaryOwnerName = optionalReceiverAccount.get().getPrimaryOwner().getName();
+        String secondaryOwnerName = optionalReceiverAccount.get().getSecondaryOwner() ==null? "" : optionalReceiverAccount.get().getSecondaryOwner().getName();
+
+        //verificación de correspondencia entre ID cuenta y propietario
+        if(primaryOwnerName.equals(transferDTO.getName())){
+            //verificación de contraseña
+            if(optionalReceiverAccount.get().getPrimaryOwner().getPassword().equals(transferDTO.getPassword())){
+
+                thirdTransferFunds(optionalReceiverAccount.get(),transferDTO);
+
+            }else throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Contraseña incorrecta");
+
+        } else if (secondaryOwnerName.equals(transferDTO.getName())) {
+            //se repite el proceso para el secondary Owner
+            //verificación de contraseña
+            if(optionalReceiverAccount.get().getSecondaryOwner().getPassword().equals(transferDTO.getPassword())){
+
+                thirdTransferFunds(optionalReceiverAccount.get(),transferDTO);
+
+            }else throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Contraseña incorrecta");
+
+        }else {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "El número de cuenta no corresponde con el propietario");
+        }
+    }
 
 
     public void transferFunds(Optional<Account> senderAccount,Optional<Account> receiverAccount,TransferDTO transferDTO){
@@ -164,10 +199,19 @@ public class CheckingService implements ICheckingService {
         if(account.isEmpty())throw new ResponseStatusException(HttpStatus.NOT_FOUND,"Cuenta de destino con id: " + transferDTO.getReceiverId() + " no encontrada");
     }
 
-
+    public void thirdTransferFunds(Account optionalReceiverAccount,TransferDTO transferDTO){
+        optionalReceiverAccount.getBalance().increaseAmount(transferDTO.getAmount());
+        accountRepository.save(optionalReceiverAccount);
+        System.out.println(optionalReceiverAccount);
+        System.out.println("Transferencia realizada mostrando datos del estado actual: ");
+        System.out.println("balance de la cuenta del destinatario : " + optionalReceiverAccount.getBalance().getAmount());
+    };
     public void deleteChecking(Integer id) {
         Optional<Checking> optionalChecking = checkingRepository.findById(id);
         if(optionalChecking.isEmpty())throw new ResponseStatusException(HttpStatus.NOT_FOUND,"La cuenta asociada a este id no existe");
         checkingRepository.deleteById(id);
     }
+
+
+
 }

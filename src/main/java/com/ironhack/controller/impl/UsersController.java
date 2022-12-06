@@ -1,5 +1,6 @@
 package com.ironhack.controller.impl;
 
+import com.ironhack.controller.dto.BalanceDTO;
 import com.ironhack.controller.interfaces.IUsersController;
 import com.ironhack.model.*;
 import com.ironhack.repository.*;
@@ -34,21 +35,25 @@ public class UsersController implements IUsersController {
     public List<AccountHolder> getAccounts(){
         return accountHolderRepository.findAll();
     }
+
     @GetMapping("/users")
     @ResponseStatus(HttpStatus.OK)
     public List<User> getAllUsers(){
         return userReposiroty.findAll();
     }
+
     @GetMapping("/admins")
     @ResponseStatus(HttpStatus.OK)
     public List<Admin> getAllAdmins(){
         return adminRepository.findAll();
     }
+
     @GetMapping("/thirdpartyusers")
     @ResponseStatus(HttpStatus.OK)
     public List<ThirdParty> getAllThirdPartyUsers(){
         return thirdPartyRepository.findAll();
     }
+
     //POST
     @PostMapping("/accountholders")
     @ResponseStatus(HttpStatus.ACCEPTED)
@@ -60,11 +65,13 @@ public class UsersController implements IUsersController {
     public void saveUsers(@RequestBody @Valid User user){
         userReposiroty.save(user);
     }
+
     @PostMapping("/admins")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public void saveAdmins(@RequestBody @Valid Admin admin){
         adminRepository.save(admin);
     }
+
     @PostMapping("/thirdpartyusers")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public void saveThirdPartyUsers(@RequestBody @Valid ThirdParty thirdParty){
@@ -76,15 +83,23 @@ public class UsersController implements IUsersController {
     public void deleteAccountHolder(@PathVariable String name){
         userService.deleteAccountHolder(name);
     }
+
     @DeleteMapping("/admins/{name}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteAdmin(@PathVariable String name){
         userService.deleteAdmin(name);
     }
+
     @DeleteMapping("/thirdpartyusers/{name}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteThirdPartyUser(@PathVariable String name){
         userService.deleteThirdPartyUser(name);
+    }
+    //PATCH
+    @PatchMapping("/accounts/balance/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void updateAccountBalance(@RequestBody BalanceDTO balanceDTO, @PathVariable  Integer id) {
+        userService.updateAccountBalance(balanceDTO.getAmount(),id);
     }
 
 
