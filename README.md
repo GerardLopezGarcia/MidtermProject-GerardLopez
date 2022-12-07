@@ -26,6 +26,16 @@ Rutas disponibles para postman
 | ------------- | ------------- | ------------- |
 | ADMIN   | "/checkings"  | GET  |
 | ADMIN  | "/accounts" | GET  |
+| ADMIN  | "/studentcheckings" | GET  |
+| ADMIN  | "/savings" | GET  |
+| ADMIN USER | "/mysavingsaccount/{id}" | GET  |
+| ADMIN  | "/creditcards" | GET  |
+| ADMIN USER | "/mycreditaccount/{id}" | GET  |
+| ADMIN  USER| "/myaccounts/{name}" | GET  |
+| ADMIN  | "/accountholders" | GET  |
+| ADMIN  | "/users" | GET  |
+| ADMIN  | "/admins" | GET  |
+| ADMIN  | "/thirdpartyusers" | GET  |
 
 
 Supabase 
