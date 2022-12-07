@@ -10,11 +10,8 @@ import java.util.List;
 public interface ICheckingService {
     void saveCheckingAccount(Checking checking);
 
-    List<Account> getMyAccountsByOwner(String name, String password);
-
-    void transferMoney(TransferDTO transferDTO);
+    List<Account> getMyAccountsByOwner(String name);
 
     void deleteChecking(Integer id);
 
-    void thirdPartyTransferMoney(TransferDTO transferDTO, String hashedKey);
 }

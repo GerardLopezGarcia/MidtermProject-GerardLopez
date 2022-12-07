@@ -7,6 +7,7 @@ import com.ironhack.model.Checking;
 import com.ironhack.repository.AccountRepository;
 import com.ironhack.repository.CheckingRepository;
 import com.ironhack.service.impl.CheckingService;
+import com.ironhack.service.impl.TransferService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -23,6 +24,8 @@ public class CheckingController implements ICheckingController {
 
     @Autowired
     AccountRepository accountRepository;
+    @Autowired
+    TransferService transferService;
 
     //GET
     @GetMapping("/checkings")
@@ -32,10 +35,10 @@ public class CheckingController implements ICheckingController {
     }
 
     //spring security context @autentication!
-    @GetMapping("/myaccounts/{name}/{password}")
+    @GetMapping("/myaccounts/{name}")
     @ResponseStatus(HttpStatus.OK)
-    public List<Account> getMyAccountsByOwner(@PathVariable(name = "name") String name,@PathVariable(name = "password") String password){
-        return checkingService.getMyAccountsByOwner(name, password);
+    public List<Account> getMyAccountsByOwner(@PathVariable(name = "name") String name){
+        return checkingService.getMyAccountsByOwner(name);
     }
     //POST
     @PostMapping("/checkings")
@@ -44,18 +47,6 @@ public class CheckingController implements ICheckingController {
         checkingService.saveCheckingAccount(checking);
     }
 
-    //PATCH transfers
-    @PatchMapping("/transfer")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void transferMoney(@RequestBody @Valid TransferDTO transferDTO){
-        checkingService.transferMoney(transferDTO);
-    }
-    //Transfers para terceros
-    @PatchMapping("/thirdpartyusers/{hashedKey}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void transferMoney(@RequestBody @Valid TransferDTO transferDTO, @PathVariable String hashedKey){
-        checkingService.thirdPartyTransferMoney(transferDTO,hashedKey);
-    }
 
     //DELETE checking
     @DeleteMapping("/checkings/{id}")

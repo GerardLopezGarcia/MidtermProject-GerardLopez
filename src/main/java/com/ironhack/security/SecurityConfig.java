@@ -33,22 +33,45 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.httpBasic();
         http.csrf().disable();
         http.authorizeHttpRequests()
-                //USERS - GET // ADMIN -GET and POST
-                .antMatchers(HttpMethod.GET,"/patients").hasAnyAuthority("ROLE_CONTRIBUTOR","ROLE_ADMIN")
-                .antMatchers(HttpMethod.POST,"/patients").hasAnyAuthority("ROLE_ADMIN")
-                .antMatchers(HttpMethod.GET,"/employees").hasAnyAuthority("ROLE_USER","ROLE_ADMIN")
-                .antMatchers(HttpMethod.POST,"/employees").hasAnyAuthority("ROLE_ADMIN")
-                //USERS AND ADMINS PUT patients
-                .antMatchers(HttpMethod.PUT,"/patients/{id}").hasAnyAuthority("ROLE_USER","ROLE_ADMIN")
-                //ADMINS PATCH employees
-                .antMatchers(HttpMethod.PATCH,"/employees/status/{employee_id}").hasAnyAuthority("ROLE_ADMIN")
-                .antMatchers(HttpMethod.PATCH,"/employees/department/{employee_id}").hasAnyAuthority("ROLE_ADMIN")
-                //DELETE -SOLO ADMIN
-                .antMatchers(HttpMethod.DELETE,"/employees/{employee_id}").hasAnyAuthority("ROLE_ADMIN")
-                .antMatchers(HttpMethod.DELETE,"/patients/{id}").hasAnyAuthority("ROLE_ADMIN","ROLE_CONTRIBUTOR");
 
-//                .antMatchers("/teachers").authenticated()
-//                .anyRequest().permitAll();
+                //GET
+                .antMatchers(HttpMethod.GET,"/checkings").hasAnyAuthority("ROLE_ADMIN")
+                .antMatchers(HttpMethod.GET,"/accounts").hasAnyAuthority("ROLE_ADMIN","ROLE_USER")
+                .antMatchers(HttpMethod.GET,"/studentcheckings").hasAnyAuthority("ROLE_ADMIN")
+                .antMatchers(HttpMethod.GET,"/savings").hasAnyAuthority("ROLE_ADMIN")
+                .antMatchers(HttpMethod.GET,"/mysavingsaccount/{id}").hasAnyAuthority("ROLE_ADMIN","ROLE_USER")
+                .antMatchers(HttpMethod.GET,"/creditcards").hasAnyAuthority("ROLE_ADMIN")
+                .antMatchers(HttpMethod.GET,"/mycreditaccount/{id}").hasAnyAuthority("ROLE_ADMIN","ROLE_USER")
+                .antMatchers(HttpMethod.GET,"/myaccounts/{name}").hasAnyAuthority("ROLE_USER","ROLE_ADMIN")
+
+                .antMatchers(HttpMethod.GET,"/accountholders").hasAnyAuthority("ROLE_ADMIN")
+                .antMatchers(HttpMethod.GET,"/users").hasAnyAuthority("ROLE_ADMIN")
+                .antMatchers(HttpMethod.GET,"/admins").hasAnyAuthority("ROLE_ADMIN")
+                .antMatchers(HttpMethod.GET,"/thirdpartyusers").hasAnyAuthority("ROLE_ADMIN")
+
+                //POST
+                .antMatchers(HttpMethod.POST,"/checkings").hasAnyAuthority("ROLE_ADMIN")
+
+                .antMatchers(HttpMethod.POST,"/accountholders").hasAnyAuthority("ROLE_ADMIN")
+                .antMatchers(HttpMethod.POST,"/users").hasAnyAuthority("ROLE_ADMIN")
+                .antMatchers(HttpMethod.POST,"/admins").hasAnyAuthority("ROLE_ADMIN")
+                .antMatchers(HttpMethod.POST,"/thirdpartyusers").hasAnyAuthority("ROLE_ADMIN")
+
+                //PATCH
+                .antMatchers(HttpMethod.PATCH,"/transfer").hasAnyAuthority("ROLE_ADMIN","ROLE_USER")
+                .antMatchers(HttpMethod.PATCH,"/thirdpartyusers/{hashedKey}").hasAnyAuthority("ROLE_ADMIN","ROLE_CONTRIBUTOR")
+                .antMatchers(HttpMethod.PATCH,"/thirdpartyusers/recieve/{hashedKey}").hasAnyAuthority("ROLE_ADMIN","ROLE_CONTRIBUTOR")
+                //DELETE
+                .antMatchers(HttpMethod.DELETE,"/checkings/{id}").hasAnyAuthority("ROLE_ADMIN")
+
+                .antMatchers(HttpMethod.DELETE,"/accountholders").hasAnyAuthority("ROLE_ADMIN")
+                .antMatchers(HttpMethod.DELETE,"/admins/{name}").hasAnyAuthority("ROLE_ADMIN")
+                .antMatchers(HttpMethod.DELETE,"/thirdpartyusers/{name}").hasAnyAuthority("ROLE_ADMIN")
+                .antMatchers(HttpMethod.DELETE,"/accounts/balance/{id}").hasAnyAuthority("ROLE_ADMIN");
+
+
+
+
 
     }
 }

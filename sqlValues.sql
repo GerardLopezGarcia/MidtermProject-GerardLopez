@@ -1,3 +1,4 @@
+
 -- INSERT INTO user (name,password,role) VALUES
 -- ('Erin Carr','ironhack','USER'),
 -- ('Naomi Barr','ironhack1','USER'),
@@ -26,15 +27,8 @@
 -- INSERT INTO third_party (hashed_key,name) VALUES
 -- ('ironhack','UsuarioExterno2'),
 -- ('123abc','UsuarioExterno3'),
--- 	('root','UsuarioExterno1');
+-- ('root','UsuarioExterno1');
 
--- INSERT INTO account (amount,currency,creation_date,penalty_fee,holder_id,secondary_holder_id) VALUES
--- (1000,'$','2001-01-21',40,'Erin Carr','Hana Jennings'),
--- (1000,'$','2001-01-21',40,'Naomi Barr','Luisa Foley'),
--- (1000,'$','2001-01-21',40,'Elinor Mcgee','Hamzah Mejia'),
--- (1000,'$','2001-01-21',40,'Hana Jennings',null),
--- (1000,'$','2001-01-21',40,'Luisa Foley',null),
--- (1000,'$','2001-01-21',40,'Hamzah Mejia',null);
 
 -- INSERT INTO account (amount,currency,creation_date,penalty_fee,holder_id,secondary_holder_id) VALUES
 -- (1000,'USD','2001-01-21',40,'Erin Carr','Hana Jennings'),
@@ -71,6 +65,46 @@
 -- DELETE FROM project_database.account WHERE id = 15;
 -- SELECT * FROM account;
 
--- UPDATE third_party
--- SET hashed_key = '$2a$10$gad48gowT0Ir83JoFlyVMOcNozEO7usTahC.z8LzeB55EDwQV139m'
+-- UPDATE user
+-- SET password = '$2a$10$59iLMyW4idSHRYhCmT7XWuqSAifxdgs1L83K9GkSdU9EepokO/Bwe'
+-- WHERE name = 'Erin Carr';
+
+-- UPDATE user
+-- SET password = '$2a$10$fCfTguY1kqyVhCqW/30Ld.YCRCUDwa81YjFQ51oKkYrUEQFRAHHDu'
+-- WHERE name = 'Naomi Barr';
+
+-- UPDATE user
+-- SET password = '$2a$10$A4F3lhvNMwXrC5O0dvldCO8Y2tRR/fV9PPDxWPBhn2wyrVC4K1Jii'
+-- WHERE name = 'Elinor Mcgee';
+
+-- UPDATE user
+-- SET password = '$2a$10$UL9/nfLr.1Pt7mpwBBiIluTDjEQ6ds/44PwJO8v2n3mquLA7PtLUS'
+-- WHERE name = 'Hana Jennings';
+
+-- UPDATE user
+-- SET password = '$2a$10$7qPNDprFGa7SteLUSSasGum6FBOTarKTVnDn.zf9ELoxhNO0ux6o2'
+-- WHERE name = 'Luisa Foley';
+
+-- UPDATE user
+-- SET password = '$2a$10$mk59gmke3LOCUELBeowbj.2EtcXX6POriTyKFaB8XKTWJEIt/2UN2'
+-- WHERE name = 'Hamzah Mejia';
+
+-- UPDATE user
+-- SET password = '$2a$10$aNbrPfc4HN.aiaCJcWNLzuL4mrtebb8c828X0RL0UStAIAAaWNCRO'
+-- WHERE name = 'Administrador1';
+
+-- UPDATE user
+-- SET password = '$2a$10$QHGf2H2SlH4X2Huf9vQx3e4LDvtetWYYGJslu6QuNrWCNvAoaw8hC'
+-- WHERE name = 'Administrador2';
+
+-- UPDATE user
+-- SET password = '$2a$10$AxUCPszLtqLpv7Gh0/VH5eodHmh0Q.kANC5SUT72rvg9LUhfNqS3W'
+-- WHERE name = 'UsuarioExterno1';
+
+-- UPDATE user
+-- SET password = '$2a$10$.x.Dxo0igRQebJXuqcHgMecJScWsaxwtp41gOcMJKu6ZnJyzB/Yc6'
+-- WHERE name = 'UsuarioExterno2';
+
+-- UPDATE user
+-- SET password = '$2a$10$Jh5tdfXa83J0qnnq45Q17eXlUfW9y1WRUCwvKyqlFb1t9uIcO6G5S'
 -- WHERE name = 'UsuarioExterno3';

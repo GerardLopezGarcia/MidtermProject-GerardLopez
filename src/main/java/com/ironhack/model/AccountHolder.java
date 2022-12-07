@@ -76,4 +76,16 @@ public class AccountHolder extends User{
     public void setMailingAddress(Address mailingAddress) {
         this.mailingAddress = mailingAddress;
     }
+
+    @Override
+    public String toString() {
+        return "AccountHolder{" +
+                "name='" + name + '\'' +
+                ", role='" + role + '\'' +
+                "dateOfBirth=" + dateOfBirth +
+                ", primaryAddress=" + primaryAddress +
+                ", mailingAddress=" + mailingAddress +
+                '}';
+    }
+
 }
