@@ -42,6 +42,7 @@ Proyecto desplegado en los servidores de *Supabase*
 Para acceder hay que añadir en los headers:
 
 >  apikey = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhsdHVjc2pya2FsZHloemhkYnVwIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzAzMzQ2MzUsImV4cCI6MTk4NTkxMDYzNX0.bjkp1lmwxzmf4C7Ke1i_Zt0Ha3JOgxyNHw8VK39tP4Q
+
 > Authorization = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhsdHVjc2pya2FsZHloemhkYnVwIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzAzMzQ2MzUsImV4cCI6MTk4NTkxMDYzNX0.bjkp1lmwxzmf4C7Ke1i_Zt0Ha3JOgxyNHw8VK39tP4Q
 
 Y podremos acceder a toda la base de datos , se añade como ejemplo las siguientes rutas:
@@ -63,10 +64,16 @@ https://xltucsjrkaldyhzhdbup.supabase.co/rest/v1/user?password=eq.supabase
 Security 
 contraseñas y cuentas
 
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| Usuario  | Contraseña | Contraseña con Hash | Usuario  | Contraseña | Contraseña con Hash |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| Erin Carr  | ironhack  | $2a$10$59iLMyW4idSHRYhCmT7XWuqSAifxdgs1L83K9GkSdU9EepokO/Bwe  | Administrador1  | Administrador1  | $2a$10$aNbrPfc4HN.aiaCJcWNLzuL4mrtebb8c828X0RL0UStAIAAaWNCRO  |
+| Naomi Barr  | ironhack1  | $2a$10$fCfTguY1kqyVhCqW/30Ld.YCRCUDwa81YjFQ51oKkYrUEQFRAHHDu | Administrador2  | Administrador2  | $2a$10$QHGf2H2SlH4X2Huf9vQx3e4LDvtetWYYGJslu6QuNrWCNvAoaw8hC  |
+| Elinor Mcgee | ironhack2  | $2a$10$A4F3lhvNMwXrC5O0dvldCO8Y2tRR/fV9PPDxWPBhn2wyrVC4K1Jii  | UsuarioExterno1  | UsuarioExterno1  | $2a$10$AxUCPszLtqLpv7Gh0/VH5eodHmh0Q.kANC5SUT72rvg9LUhfNqS3W |
+| Hana Jennings  | ironhack3  | $2a$10$UL9/nfLr.1Pt7mpwBBiIluTDjEQ6ds/44PwJO8v2n3mquLA7PtLUS  | UsuarioExterno2  | UsuarioExterno2  | $2a$10$.x.Dxo0igRQebJXuqcHgMecJScWsaxwtp41gOcMJKu6ZnJyzB/Yc6  |
+| Luisa Foley  | ironhack4 | $2a$10$7qPNDprFGa7SteLUSSasGum6FBOTarKTVnDn.zf9ELoxhNO0ux6o2  | UsuarioExterno3  | UsuarioExterno3  | $2a$10$Jh5tdfXa83J0qnnq45Q17eXlUfW9y1WRUCwvKyqlFb1t9uIcO6G5S  |
+| Hamzah Mejia  | ironhack5  | $2a$10$mk59gmke3LOCUELBeowbj.2EtcXX6POriTyKFaB8XKTWJEIt/2UN2  |
+
+
 
 ## Setup
 
