@@ -41,17 +41,23 @@ Rutas disponibles para postman
 Proyecto desplegado en los servidores de *Supabase*
 Para acceder hay que añadir en los headers:
 
-apikey = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhsdHVjc2pya2FsZHloemhkYnVwIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzAzMzQ2MzUsImV4cCI6MTk4NTkxMDYzNX0.bjkp1lmwxzmf4C7Ke1i_Zt0Ha3JOgxyNHw8VK39tP4Q
+######## apikey = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhsdHVjc2pya2FsZHloemhkYnVwIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzAzMzQ2MzUsImV4cCI6MTk4NTkxMDYzNX0.bjkp1lmwxzmf4C7Ke1i_Zt0Ha3JOgxyNHw8VK39tP4Q
 Authorization = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhsdHVjc2pya2FsZHloemhkYnVwIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzAzMzQ2MzUsImV4cCI6MTk4NTkxMDYzNX0.bjkp1lmwxzmf4C7Ke1i_Zt0Ha3JOgxyNHw8VK39tP4Q
 
 Y podremos acceder a toda la base de datos , se añade como ejemplo las siguientes rutas:
+
 GET
+
 https://xltucsjrkaldyhzhdbup.supabase.co/rest/v1/account?select=*
 https://xltucsjrkaldyhzhdbup.supabase.co/rest/v1/checking?select=minimum_balance,id,status
 https://xltucsjrkaldyhzhdbup.supabase.co/rest/v1/user?select=*
+
 POST
+
 https://xltucsjrkaldyhzhdbup.supabase.co/rest/v1/user
+
 DELETE
+
 https://xltucsjrkaldyhzhdbup.supabase.co/rest/v1/user?password=eq.supabase
 
 Security 
