@@ -61,8 +61,8 @@ DELETE
 
 https://xltucsjrkaldyhzhdbup.supabase.co/rest/v1/user?password=eq.supabase
 
-Security 
-contraseñas y cuentas
+SECURITY
+Listado de contraseñas y cuentas para acceder con postman y basic auth
 
 | Usuario  | Contraseña | Contraseña con Hash | Usuario  | Contraseña | Contraseña con Hash |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
