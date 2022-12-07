@@ -34,7 +34,7 @@ Rutas disponibles para postman
 
 
 
-![image](https://user-images.githubusercontent.com/72072309/206209842-c1c0e01e-48e1-4d08-919f-730e6973d0a0.png) Proyecto desplegado en los servidores de *Supabase*
+Proyecto desplegado en los servidores de *Supabase*
 Para acceder hay que añadir en los headers:
 
 >  apikey = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhsdHVjc2pya2FsZHloemhkYnVwIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzAzMzQ2MzUsImV4cCI6MTk4NTkxMDYzNX0.bjkp1lmwxzmf4C7Ke1i_Zt0Ha3JOgxyNHw8VK39tP4Q
