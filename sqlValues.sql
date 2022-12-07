@@ -50,8 +50,14 @@
 -- (0.0025,1000,'root','ACTIVE',5),
 -- (0.0025,1000,'ironhack1','ACTIVE',6);
 
+
 -- Ampliación de interest_rate para poder añadir 4 decimales
 -- ALTER TABLE savings MODIFY COLUMN interest_rate decimal(19,4) DEFAULT NULL;
+
+-- UPDATE savings
+-- SET interest_rate = 0.0025
+-- WHERE status = 'ACTIVE';
+
 
 -- SET SQL_SAFE_UPDATES = 0;
 -- DELETE FROM project_database.student_checking WHERE id = 15;
@@ -65,6 +71,7 @@
 -- DELETE FROM project_database.account WHERE id = 15;
 -- SELECT * FROM account;
 
+-- hashed Keys -------------
 -- UPDATE user
 -- SET password = '$2a$10$59iLMyW4idSHRYhCmT7XWuqSAifxdgs1L83K9GkSdU9EepokO/Bwe'
 -- WHERE name = 'Erin Carr';
