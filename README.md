@@ -33,15 +33,26 @@ Rutas disponibles para postman
 | ADMIN USER | "/mycreditaccount/{id}" | GET  | ADMIN , USER | "/retrieveMoney"  | PATCH  |
 | ADMIN , USER| "/myaccounts/{name}" | GET  | ADMIN , CONTRIBUTOR | "/thirdpartyusers/{hashedKey}"  | PATCH  |
 | ADMIN  | "/accountholders" | GET  | ADMIN , CONTRIBUTOR | "/thirdpartyusers/recieve/{hashedKey}" | PATCH  |
-| ADMIN  | "/users" | GET  | ADMIN   | "/checkings/{id}" (las mismas que POST)  | DELETE  |
-| ADMIN  | "/admins" | GET  | ADMIN   | "/checkings/{id}" (las mismas que POST)  | DELETE  |
-| ADMIN  | "/thirdpartyusers" | GET  | ADMIN   | "/checkings/{id}" (las mismas que POST)  | DELETE  |
+| ADMIN  | "/users" | GET  | ADMIN   | "/checkings/{id}"  | DELETE  |
+| ADMIN  | "/admins" | GET  | ADMIN   | "/admins/{name}" (las mismas que POST)  | DELETE  |
+| ADMIN  | "/thirdpartyusers" | GET  | ADMIN   | "/thirdpartyusers/{name}" | DELETE  |
 
 
-Supabase 
--rutas
--apikey
--auth
+Proyecto desplegado en los servidores de *Supabase*
+Para acceder hay que añadir en los headers:
+
+apikey = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhsdHVjc2pya2FsZHloemhkYnVwIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzAzMzQ2MzUsImV4cCI6MTk4NTkxMDYzNX0.bjkp1lmwxzmf4C7Ke1i_Zt0Ha3JOgxyNHw8VK39tP4Q
+Authorization = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhsdHVjc2pya2FsZHloemhkYnVwIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzAzMzQ2MzUsImV4cCI6MTk4NTkxMDYzNX0.bjkp1lmwxzmf4C7Ke1i_Zt0Ha3JOgxyNHw8VK39tP4Q
+
+Y podremos acceder a toda la base de datos , se añade como ejemplo las siguientes rutas:
+GET
+https://xltucsjrkaldyhzhdbup.supabase.co/rest/v1/account?select=*
+https://xltucsjrkaldyhzhdbup.supabase.co/rest/v1/checking?select=minimum_balance,id,status
+https://xltucsjrkaldyhzhdbup.supabase.co/rest/v1/user?select=*
+POST
+https://xltucsjrkaldyhzhdbup.supabase.co/rest/v1/user
+DELETE
+https://xltucsjrkaldyhzhdbup.supabase.co/rest/v1/user?password=eq.supabase
 
 Security 
 contraseñas y cuentas
