@@ -3,11 +3,6 @@
 > Este proyecto ha sido desarrollado con Java, MySQL y Spring!🐱‍💻
 
 
-## Proyecto:
-
-users controller - todo el servicio de usuarios
-accounts + transfer
-
 
 ## UML del Proyecto
 
