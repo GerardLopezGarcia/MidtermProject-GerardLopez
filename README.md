@@ -3,15 +3,26 @@
 > Este proyecto ha sido desarrollado con Java, MySQL y Spring!🐱‍💻
 
 
-## Funcionamiento:
+## Proyecto:
 
-Include a Java/Spring Boot backend.
-Everything should be stored in MySQL database tables.
-Include at least 1 GET, POST, PUT/PATCH, and DELETE route.
-Include authentication with Spring Security.
-Include unit and integration tests.
-Include robust error handling.
-You must use the Money class for all currency and BigDecimal for any other decimal or large number math.
+users controller - todo el servicio de usuarios
+accounts + transfer
+
+rutas para postman
+
+
+Supabase 
+-rutas
+-apikey
+-auth
+
+Security 
+contraseñas y cuentas
+
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
 
 ## UML del Proyecto
 
