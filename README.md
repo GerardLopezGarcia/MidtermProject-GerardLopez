@@ -32,7 +32,7 @@ Rutas disponibles para postman
 | ADMIN  | "/admins" | GET  | ADMIN   | "/admins/{name}" (las mismas que POST)  | DELETE  |
 | ADMIN  | "/thirdpartyusers" | GET  | ADMIN   | "/thirdpartyusers/{name}" | DELETE  |
 
-
+## Bonus
 
 Proyecto desplegado en los servidores de *Supabase*
 Para acceder hay que añadir en los headers:
