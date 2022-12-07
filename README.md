@@ -32,6 +32,8 @@ Rutas disponibles para postman
 | ADMIN  | "/admins" | GET  | ADMIN   | "/admins/{name}" (las mismas que POST)  | DELETE  |
 | ADMIN  | "/thirdpartyusers" | GET  | ADMIN   | "/thirdpartyusers/{name}" | DELETE  |
 
+![image](https://user-images.githubusercontent.com/72072309/206209678-2a3a8c26-6377-47c2-b0f1-b403fa70e42c.png)
+
 
 Proyecto desplegado en los servidores de *Supabase*
 Para acceder hay que añadir en los headers:
