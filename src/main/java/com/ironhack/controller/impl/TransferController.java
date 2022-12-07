@@ -23,6 +23,14 @@ public class TransferController implements ITransferController {
     public void transferMoney(@RequestBody @Valid TransferDTO transferDTO){
         transferService.transferMoney(transferDTO);
     }
+
+    //PATCH transfers
+    @PatchMapping("/retrieveMoney")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void retrieveMoney(@RequestBody @Valid TransferDTO transferDTO){
+        transferService.retrieveMoney(transferDTO);
+    }
+
     //Transfers para terceros
     @PatchMapping("/thirdpartyusers/{hashedKey}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
@@ -30,7 +38,7 @@ public class TransferController implements ITransferController {
         transferService.thirdPartyTransferMoney(transferDTO,hashedKey);
     }
 
-    //recibir dinero
+    //recibir dinero (Terceros)
     @PatchMapping("/thirdpartyusers/recieve/{hashedKey}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void recieveMoney(@RequestBody @Valid TransferDTO transferDTO, @PathVariable String hashedKey){

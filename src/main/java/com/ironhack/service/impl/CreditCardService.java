@@ -27,18 +27,27 @@ public class CreditCardService implements ICreditCardService {
 
     public CreditCard getMyCreditCardAccount(Integer id) {
         Optional<CreditCard>optionalCreditCard = creditCardRepository.findById(id);
+        LocalDate lastTimeInterestApplied = optionalCreditCard.get().getLastTimeInterestApplied();
         validateEmptyAccount(optionalCreditCard);
         LocalDate creationDate = optionalCreditCard.get().getCreationDate();
         LocalDate now = LocalDate.now();
         long daysElapsed = java.time.temporal.ChronoUnit.DAYS.between(now,creationDate);
 //      para testing añadir esta condición en el if(now.getYear()-creationDate.getYear()>0)
         if(daysElapsed > 28 && daysElapsed < 31){
+
             //interes * balance
-            BigDecimal interestToAdd = optionalCreditCard.get().getBalance().getAmount().multiply(optionalCreditCard.get().getInterestRate());
-            optionalCreditCard.get().getBalance().increaseAmount(interestToAdd);
-            System.out.println("Interes añadido");
-            creditCardRepository.save(optionalCreditCard.get());
-            return optionalCreditCard.get();
+            if(lastTimeInterestApplied.getDayOfMonth() != now.getDayOfMonth()){
+                BigDecimal interestToAdd = optionalCreditCard.get().getBalance().getAmount().multiply(optionalCreditCard.get().getInterestRate());
+                optionalCreditCard.get().getBalance().increaseAmount(interestToAdd);
+                System.out.println("Interes añadido");
+                optionalCreditCard.get().setLastTimeInterestApplied(now);
+                System.out.println("Fecha de aplicación de interés actualizada");
+                creditCardRepository.save(optionalCreditCard.get());
+                return optionalCreditCard.get();
+            }else {
+                System.out.println("El interés ya ha sido aplicado con anterioridad");
+                return optionalCreditCard.get();
+            }
         }
         return optionalCreditCard.get();
     }

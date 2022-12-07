@@ -8,4 +8,6 @@ public interface ITransferService {
     void thirdPartyTransferMoney(TransferDTO transferDTO, String hashedKey);
 
     void thirdPartyRecieveMoney(TransferDTO transferDTO, String hashedKey);
+
+    void retrieveMoney(TransferDTO transferDTO);
 }

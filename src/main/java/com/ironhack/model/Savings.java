@@ -19,6 +19,7 @@ public class Savings extends Account{
     @Enumerated(EnumType.STRING)
     private Status status;
 
+    private LocalDate lastTimeInterestApplied;
     public Savings() {
     }
 
@@ -28,6 +29,7 @@ public class Savings extends Account{
         setMinimumBalance(minimumBalance);
         setInterestRate(interestRate);
         this.status = status;
+        setLastTimeInterestApplied(creationDate);
     }
     //Constructor with secondaryOwner
 
@@ -36,6 +38,7 @@ public class Savings extends Account{
         this.secretKey = secretKey;
         setMinimumBalance(minimumBalance);
         setInterestRate(interestRate);
+        setLastTimeInterestApplied(creationDate);
         this.status = status;
     }
 
@@ -71,5 +74,11 @@ public class Savings extends Account{
         this.status = status;
     }
 
+    public LocalDate getLastTimeInterestApplied() {
+        return lastTimeInterestApplied;
+    }
 
+    public void setLastTimeInterestApplied(LocalDate lastTimeInterestApplied) {
+        this.lastTimeInterestApplied = lastTimeInterestApplied;
+    }
 }

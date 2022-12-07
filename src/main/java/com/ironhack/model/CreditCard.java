@@ -16,6 +16,7 @@ public class CreditCard extends Account{
     @DecimalMin(value = "0.1",message = "El interes no puede ser inferior a 0.1")
     private BigDecimal interestRate;
 
+    private LocalDate lastTimeInterestApplied;
     public CreditCard() {
     }
 
@@ -23,12 +24,14 @@ public class CreditCard extends Account{
         super(balance, primaryOwner, creationDate, penaltyFee);
         setCreditLimit(creditLimit);
         setInterestRate(interestRate);
+        setLastTimeInterestApplied(creationDate);
     }
     //Constructor with optional secondaryOwner
     public CreditCard(Money balance, AccountHolder primaryOwner, AccountHolder secondaryOwner, LocalDate creationDate, BigDecimal penaltyFee, BigDecimal creditLimit, BigDecimal interestRate) {
         super(balance, primaryOwner, secondaryOwner, creationDate, penaltyFee);
         setCreditLimit(creditLimit);
         setInterestRate(interestRate);
+        setLastTimeInterestApplied(creationDate);
     }
 
     public BigDecimal getCreditLimit() {
@@ -45,5 +48,13 @@ public class CreditCard extends Account{
 
     public void setInterestRate(BigDecimal interestRate) {
         this.interestRate = interestRate == null ? new BigDecimal("0.2") : interestRate;
+    }
+
+    public LocalDate getLastTimeInterestApplied() {
+        return lastTimeInterestApplied;
+    }
+
+    public void setLastTimeInterestApplied(LocalDate lastTimeInterestApplied) {
+        this.lastTimeInterestApplied = lastTimeInterestApplied;
     }
 }
