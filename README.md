@@ -29,13 +29,13 @@ Rutas disponibles para postman
 | ADMIN  | "/studentcheckings" | GET  | ADMIN   | "/users"  | POST  |
 | ADMIN  | "/savings" | GET  | ADMIN   | "/admins"  | POST  |
 | ADMIN ,USER | "/mysavingsaccount/{id}" | GET  | ADMIN   | "/thirdpartyusers"  | POST  |
-| ADMIN  | "/creditcards" | GET  |
-| ADMIN USER | "/mycreditaccount/{id}" | GET  |
-| ADMIN , USER| "/myaccounts/{name}" | GET  |
-| ADMIN  | "/accountholders" | GET  |
-| ADMIN  | "/users" | GET  |
-| ADMIN  | "/admins" | GET  |
-| ADMIN  | "/thirdpartyusers" | GET  |
+| ADMIN  | "/creditcards" | GET  | ADMIN , USER | "/transfer"  | PATCH  |
+| ADMIN USER | "/mycreditaccount/{id}" | GET  | ADMIN , USER | "/retrieveMoney"  | PATCH  |
+| ADMIN , USER| "/myaccounts/{name}" | GET  | ADMIN , CONTRIBUTOR | "/thirdpartyusers/{hashedKey}"  | PATCH  |
+| ADMIN  | "/accountholders" | GET  | ADMIN , CONTRIBUTOR | "/thirdpartyusers/recieve/{hashedKey}" | PATCH  |
+| ADMIN  | "/users" | GET  | ADMIN   | "/checkings/{id}" (las mismas que POST)  | DELETE  |
+| ADMIN  | "/admins" | GET  | ADMIN   | "/checkings/{id}" (las mismas que POST)  | DELETE  |
+| ADMIN  | "/thirdpartyusers" | GET  | ADMIN   | "/checkings/{id}" (las mismas que POST)  | DELETE  |
 
 
 Supabase 
