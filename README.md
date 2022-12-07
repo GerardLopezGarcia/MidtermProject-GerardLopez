@@ -18,7 +18,7 @@ accounts + transfer
 
 ![image](https://user-images.githubusercontent.com/72072309/205298752-b837bcac-42ab-419f-8d06-f752332f9371.png)
 
-##Rutas - Postman - Supabase_Servidor
+## Rutas - Postman - Supabase_Servidor
 
 rutas para postman
 
