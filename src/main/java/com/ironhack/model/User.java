@@ -1,5 +1,7 @@
 package com.ironhack.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
@@ -9,9 +11,10 @@ import javax.persistence.InheritanceType;
 @Inheritance(strategy = InheritanceType.JOINED)
 public class User {
     @Id
-    private String name;
+    protected String name;
+    @JsonIgnore
     private String password;
-    private String role;
+    protected String role;
 
     public User() {
     }
@@ -44,5 +47,13 @@ public class User {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", role='" + role + '\'' +
+                '}';
     }
 }

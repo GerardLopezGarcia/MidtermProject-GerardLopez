@@ -58,154 +58,19 @@ public class CheckingService implements ICheckingService {
       }
     }
 
-    //spring security context @autentication!
-    public List<Account> getMyAccountsByOwner(String name, String password) {
+
+    public List<Account> getMyAccountsByOwner(String name) {
 
         Optional<User> optionalUser = userRepository.findByName(name);
         if(optionalUser.isEmpty())throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Usuario no encontrado");
-        if(optionalUser.get().getPassword().equals(password)){
-            List<Account> accountList = new ArrayList<>();
-            accountList.addAll(accountRepository.findAllByPrimaryOwnerName(name));
-            accountList.addAll(accountRepository.findAllBySecondaryOwnerName(name));
-            return accountList;
-        }else{
-            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "contraseña incorrecta");
-        }
+
+        List<Account> accountList = new ArrayList<>();
+        accountList.addAll(accountRepository.findAllByPrimaryOwnerName(name));
+        accountList.addAll(accountRepository.findAllBySecondaryOwnerName(name));
+        return accountList;
     }
 
 
-    public void transferMoney(TransferDTO transferDTO) {
-        /*El usuario tiene que especificar que cuenta hará la transacción, pasar un nombre y contraseña para asegurar que es propietario,
-        id sender + amount y otro id de la cuenta a la que transferir los fondos*/
-
-        //comprobación de que tanto sender como receiver existen
-        Optional<Account> optionalAccount = accountRepository.findById(transferDTO.getSenderId());
-        Optional<Account> optionalReceiverAccount = accountRepository.findById(transferDTO.getReceiverId());
-        validateEmptyAccount(optionalAccount,transferDTO);
-        validateEmptyAccount(optionalReceiverAccount,transferDTO);
-
-        String primaryOwnerName = optionalAccount.get().getPrimaryOwner().getName();
-        String secondaryOwnerName = optionalAccount.get().getSecondaryOwner() ==null? "" : optionalAccount.get().getSecondaryOwner().getName();
-
-        //verificación de correspondencia entre ID cuenta y propietario
-        if(primaryOwnerName.equals(transferDTO.getName())){
-            //verificación de contraseña
-            if(optionalAccount.get().getPrimaryOwner().getPassword().equals(transferDTO.getPassword())){
-                /*mirar fondos - hacer transacción - mirar si balance < balancemínimo para penalty - comprobar fraude */
-                if (optionalAccount.get().getBalance().getAmount().compareTo(transferDTO.getAmount()) >=0){
-                    //se realiza la transacción
-                    transferFunds(optionalAccount,optionalReceiverAccount,transferDTO);
-
-                }else throw new  ResponseStatusException(HttpStatus.FORBIDDEN, "Fondos insuficientes");
-            }else throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Contraseña incorrecta");
-
-        } else if (secondaryOwnerName.equals(transferDTO.getName())) {
-            //se repite el proceso para el secondary Owner
-            //verificación de contraseña
-            if(optionalAccount.get().getSecondaryOwner().getPassword().equals(transferDTO.getPassword())){
-                /*mirar fondos - hacer transacción - mirar si balance < balancemínimo para penalty - comprobar fraude */
-                if (optionalReceiverAccount.get().getBalance().getAmount().compareTo(BigDecimal.ZERO) >0){
-                    //se realiza la transacción
-                    transferFunds(optionalAccount,optionalReceiverAccount,transferDTO);
-                }else throw new  ResponseStatusException(HttpStatus.FORBIDDEN, "Fondos insuficientes");
-            }else throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Contraseña incorrecta");
-
-        }else {
-            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "El número de cuenta no corresponde con el propietario");
-        }
-
-    }
-    public void thirdPartyTransferMoney(TransferDTO transferDTO, String hashedKey) {
-
-
-        //comprobación de que tanto sender como receiver existen
-        Optional<Account> optionalReceiverAccount = accountRepository.findById(transferDTO.getReceiverId());
-        validateEmptyAccount(optionalReceiverAccount,transferDTO);
-        Optional<ThirdParty> optionalThirdParty = thirdPartyRepository.findByHashedKey(hashedKey);
-        if(optionalThirdParty.isEmpty())throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Contraseña 'hashedKey' incorrecta");
-
-        String primaryOwnerName = optionalReceiverAccount.get().getPrimaryOwner().getName();
-        String secondaryOwnerName = optionalReceiverAccount.get().getSecondaryOwner() ==null? "" : optionalReceiverAccount.get().getSecondaryOwner().getName();
-
-        //verificación de correspondencia entre ID cuenta y propietario
-        if(primaryOwnerName.equals(transferDTO.getName())){
-            //verificación de contraseña
-            if(optionalReceiverAccount.get().getPrimaryOwner().getPassword().equals(transferDTO.getPassword())){
-
-                thirdTransferFunds(optionalReceiverAccount.get(),transferDTO);
-
-            }else throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Contraseña incorrecta");
-
-        } else if (secondaryOwnerName.equals(transferDTO.getName())) {
-            //se repite el proceso para el secondary Owner
-            //verificación de contraseña
-            if(optionalReceiverAccount.get().getSecondaryOwner().getPassword().equals(transferDTO.getPassword())){
-
-                thirdTransferFunds(optionalReceiverAccount.get(),transferDTO);
-
-            }else throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Contraseña incorrecta");
-
-        }else {
-            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "El número de cuenta no corresponde con el propietario");
-        }
-    }
-
-
-    public void transferFunds(Optional<Account> senderAccount,Optional<Account> receiverAccount,TransferDTO transferDTO){
-
-        senderAccount.get().getBalance().decreaseAmount(transferDTO.getAmount());
-        receiverAccount.get().getBalance().increaseAmount(transferDTO.getAmount());
-
-        accountRepository.save(senderAccount.get());
-        accountRepository.save(receiverAccount.get());
-        System.out.println(senderAccount.get());
-        System.out.println(receiverAccount.get());
-        System.out.println("Transferencia realizada mostrando datos del estado actual: ");
-
-        //comprobación balance -penalty
-        penaltyValidation(senderAccount,transferDTO);
-
-        System.out.println("balance actual de tu cuenta : " + senderAccount.get().getBalance().getAmount() +"\n"+
-                "balance de la cuenta del destinatario : " + receiverAccount.get().getBalance().getAmount());
-    }
-
-    public void penaltyValidation(Optional<Account> account,TransferDTO transferDTO){
-        Optional<Checking> optionalChecking= checkingRepository.findById(transferDTO.getSenderId());
-
-        if(optionalChecking.isEmpty()){
-
-            //comparo con Saving
-            Optional<Savings> optionalSaving = savingsRepository.findById(transferDTO.getSenderId());
-            BigDecimal minimumBalance = optionalSaving.get().getMinimumBalance();
-            BigDecimal penalty = account.get().getPenaltyFee();
-            if(optionalSaving.get().getBalance().getAmount().compareTo(minimumBalance) < 0){
-                //Se aplica la penalty ya que balance < balance mínimo
-                account.get().getBalance().decreaseAmount(penalty);
-                System.out.println("Se ha aplicado una tarifa "+ penalty + " debido a que el balance es inferior al balance mínimo permitido");
-            }
-        }else{
-            //comparo con Checking
-            BigDecimal minimumBalance = optionalChecking.get().getMinimumBalance();
-            BigDecimal penalty = account.get().getPenaltyFee();
-            if(optionalChecking.get().getBalance().getAmount().compareTo(minimumBalance) < 0){
-                //Se aplica la penalty ya que balance < balance mínimo
-                account.get().getBalance().decreaseAmount(penalty);
-                System.out.println("Se ha aplicado una tarifa "+ penalty + " debido a que el balance es inferior al balance mínimo permitido");
-            }
-        }
-    }
-
-    public void validateEmptyAccount(Optional<Account> account,TransferDTO transferDTO){
-        if(account.isEmpty())throw new ResponseStatusException(HttpStatus.NOT_FOUND,"Cuenta de destino con id: " + transferDTO.getReceiverId() + " no encontrada");
-    }
-
-    public void thirdTransferFunds(Account optionalReceiverAccount,TransferDTO transferDTO){
-        optionalReceiverAccount.getBalance().increaseAmount(transferDTO.getAmount());
-        accountRepository.save(optionalReceiverAccount);
-        System.out.println(optionalReceiverAccount);
-        System.out.println("Transferencia realizada mostrando datos del estado actual: ");
-        System.out.println("balance de la cuenta del destinatario : " + optionalReceiverAccount.getBalance().getAmount());
-    };
     public void deleteChecking(Integer id) {
         Optional<Checking> optionalChecking = checkingRepository.findById(id);
         if(optionalChecking.isEmpty())throw new ResponseStatusException(HttpStatus.NOT_FOUND,"La cuenta asociada a este id no existe");

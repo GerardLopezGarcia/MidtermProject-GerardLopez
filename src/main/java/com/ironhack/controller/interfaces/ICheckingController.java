@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface ICheckingController {
     void saveCheckingAccount( Checking checking);
-    List<Account> getMyAccountsByOwner(String name, String password);
-    void transferMoney(TransferDTO transferDTO);
+    List<Account> getMyAccountsByOwner(String name);
+
     public void deleteChecking(Integer id);
 }

@@ -1,5 +1,7 @@
 package com.ironhack.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.math.BigDecimal;
@@ -10,6 +12,7 @@ import java.time.LocalDate;
 @PrimaryKeyJoinColumn(name = "id")
 public class Checking extends Account{
     @NotEmpty(message = "Introduzca una contraseña")
+    @JsonIgnore
     private String secretKey;
 
     private BigDecimal minimumBalance;

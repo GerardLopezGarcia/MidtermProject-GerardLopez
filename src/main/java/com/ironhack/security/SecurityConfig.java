@@ -36,13 +36,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
                 //GET
                 .antMatchers(HttpMethod.GET,"/checkings").hasAnyAuthority("ROLE_ADMIN")
-                .antMatchers(HttpMethod.GET,"/accounts").hasAnyAuthority("ROLE_ADMIN")
+                .antMatchers(HttpMethod.GET,"/accounts").hasAnyAuthority("ROLE_ADMIN","ROLE_USER")
                 .antMatchers(HttpMethod.GET,"/studentcheckings").hasAnyAuthority("ROLE_ADMIN")
                 .antMatchers(HttpMethod.GET,"/savings").hasAnyAuthority("ROLE_ADMIN")
                 .antMatchers(HttpMethod.GET,"/mysavingsaccount/{id}").hasAnyAuthority("ROLE_ADMIN","ROLE_USER")
                 .antMatchers(HttpMethod.GET,"/creditcards").hasAnyAuthority("ROLE_ADMIN")
                 .antMatchers(HttpMethod.GET,"/mycreditaccount/{id}").hasAnyAuthority("ROLE_ADMIN","ROLE_USER")
-                .antMatchers(HttpMethod.GET,"/myaccounts/{name}/{password}").hasAnyAuthority("ROLE_USER","ROLE_ADMIN")
+                .antMatchers(HttpMethod.GET,"/myaccounts/{name}").hasAnyAuthority("ROLE_USER","ROLE_ADMIN")
 
                 .antMatchers(HttpMethod.GET,"/accountholders").hasAnyAuthority("ROLE_ADMIN")
                 .antMatchers(HttpMethod.GET,"/users").hasAnyAuthority("ROLE_ADMIN")
@@ -60,6 +60,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 //PATCH
                 .antMatchers(HttpMethod.PATCH,"/transfer").hasAnyAuthority("ROLE_ADMIN","ROLE_USER")
                 .antMatchers(HttpMethod.PATCH,"/thirdpartyusers/{hashedKey}").hasAnyAuthority("ROLE_ADMIN","ROLE_CONTRIBUTOR")
+                .antMatchers(HttpMethod.PATCH,"/thirdpartyusers/recieve/{hashedKey}").hasAnyAuthority("ROLE_ADMIN","ROLE_CONTRIBUTOR")
                 //DELETE
                 .antMatchers(HttpMethod.DELETE,"/checkings/{id}").hasAnyAuthority("ROLE_ADMIN")
 

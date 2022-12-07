@@ -18,13 +18,14 @@
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files>
-      <object connection-id="844f92c6-6160-4c22-b0a7-34dd269addde" object-ref="schemas/project_database/tables/third_party" />
-      <object connection-id="844f92c6-6160-4c22-b0a7-34dd269addde" object-ref="schemas/project_database/tables/savings" />
-      <object connection-id="844f92c6-6160-4c22-b0a7-34dd269addde" object-ref="schemas/project_database/tables/account_holder" />
       <object connection-id="844f92c6-6160-4c22-b0a7-34dd269addde" object-ref="schemas/project_database/tables/account" />
-      <object connection-id="844f92c6-6160-4c22-b0a7-34dd269addde" object-ref="schemas/project_database/tables/checking" />
+      <object connection-id="844f92c6-6160-4c22-b0a7-34dd269addde" object-ref="schemas/project_database/tables/admin" />
+      <object connection-id="844f92c6-6160-4c22-b0a7-34dd269addde" object-ref="schemas/project_database/tables/savings" />
       <object connection-id="844f92c6-6160-4c22-b0a7-34dd269addde" object-ref="schemas/project_database/tables/user" />
+      <object connection-id="844f92c6-6160-4c22-b0a7-34dd269addde" object-ref="schemas/project_database/tables/checking" />
       <object connection-id="844f92c6-6160-4c22-b0a7-34dd269addde" object-ref="schemas/project_database/tables/credit_card" />
+      <object connection-id="844f92c6-6160-4c22-b0a7-34dd269addde" object-ref="schemas/project_database/tables/account_holder" />
+      <object connection-id="844f92c6-6160-4c22-b0a7-34dd269addde" object-ref="schemas/project_database/tables/third_party" />
     </open-files>
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
