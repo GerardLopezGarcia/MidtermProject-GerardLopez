@@ -20,7 +20,12 @@ accounts + transfer
 
 ## Rutas - Postman - Supabase_Servidor
 
-rutas para postman
+Rutas disponibles para postman
+
+| roles  | ruta | metodo |
+| ------------- | ------------- | ------------- |
+| ADMIN   | "/checkings"  | GET  |
+| ADMIN  | "/accounts" | GET  |
 
 
 Supabase 
