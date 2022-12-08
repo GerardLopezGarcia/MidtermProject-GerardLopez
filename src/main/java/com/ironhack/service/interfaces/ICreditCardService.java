@@ -9,5 +9,6 @@ public interface ICreditCardService {
 
     List<CreditCard> getAllCreditCardAccounts();
 
-    CreditCard getMyCreditCardAccount(Integer id);
+    CreditCard getMyCreditCardAccount(Integer id, String name);
+    CreditCard returnCreditAccount(Integer id);
 }

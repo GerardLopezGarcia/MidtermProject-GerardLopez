@@ -1,8 +1,9 @@
 package com.ironhack.service.impl;
 
-import com.ironhack.model.CreditCard;
-import com.ironhack.model.Savings;
+import com.ironhack.model.*;
+import com.ironhack.repository.AccountRepository;
 import com.ironhack.repository.CreditCardRepository;
+import com.ironhack.repository.UserRepository;
 import com.ironhack.service.interfaces.ICreditCardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,20 +13,52 @@ import org.springframework.web.server.ResponseStatusException;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @Service
 public class CreditCardService implements ICreditCardService {
     @Autowired
     CreditCardRepository creditCardRepository;
-
+    @Autowired
+    UserRepository userRepository;
+    @Autowired
+    AccountRepository accountRepository;
 
     public List<CreditCard> getAllCreditCardAccounts() {
         return creditCardRepository.findAll();
     }
 
 
-    public CreditCard getMyCreditCardAccount(Integer id) {
+    public CreditCard getMyCreditCardAccount(Integer id,String name) {
+
+        Optional<User> optionalUser = userRepository.findByName(name);
+        String role = optionalUser.get().getRole();
+        Optional<Account> optionalAccount = accountRepository.findById(id);
+        String secondary = null;
+        String primary =null;
+
+        AccountHolder primaryOwner = optionalAccount.get().getPrimaryOwner();
+        if(primaryOwner != null) primary = primaryOwner.getName();
+
+        AccountHolder secondaryOwner = optionalAccount.get().getSecondaryOwner();
+        if(secondaryOwner != null) secondary = secondaryOwner.getName();
+
+        if(role.equals("ADMIN")){
+            return returnCreditAccount(id);
+        } else {
+            assert primary != null;
+            if (primary.equals(name) || Objects.equals(secondary, name)) {
+                return returnCreditAccount(id);
+            }else{
+                throw new ResponseStatusException(HttpStatus.FORBIDDEN,"Solo pueden acceder los propietarios de la cuenta o los administradores");
+            }
+        }
+
+    }
+
+    public CreditCard returnCreditAccount(Integer id){
+
         Optional<CreditCard>optionalCreditCard = creditCardRepository.findById(id);
         LocalDate lastTimeInterestApplied = optionalCreditCard.get().getLastTimeInterestApplied();
         validateEmptyAccount(optionalCreditCard);

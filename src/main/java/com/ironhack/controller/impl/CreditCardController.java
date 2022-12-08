@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.security.Principal;
 import java.util.List;
 
 @RestController
@@ -30,7 +31,7 @@ public class CreditCardController implements ICreditCardController {
     }
     @GetMapping("/mycreditaccount/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public CreditCard getMyCreditCardAccount(@PathVariable(name = "id")Integer id){
-        return creditCardService.getMyCreditCardAccount(id);
+    public CreditCard getMyCreditCardAccount(@PathVariable(name = "id")Integer id, Principal user){
+        return creditCardService.getMyCreditCardAccount(id,user.getName());
     }
 }

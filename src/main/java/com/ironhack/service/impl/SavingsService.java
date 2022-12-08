@@ -17,6 +17,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @Service
@@ -48,10 +49,13 @@ public class SavingsService implements ISavingsService {
 
         if(role.equals("ADMIN")){
             return returnSavingsAccount(id);
-        } else if (primary.equals(name) || secondary.equals(name)) {
-            return returnSavingsAccount(id);
-        }else{
-            throw new ResponseStatusException(HttpStatus.FORBIDDEN,"Solo pueden acceder los propietarios de la cuenta o los administradores");
+        } else {
+            assert primary != null;
+            if (primary.equals(name) || Objects.equals(secondary, name)) {
+                return returnSavingsAccount(id);
+            }else{
+                throw new ResponseStatusException(HttpStatus.FORBIDDEN,"Solo pueden acceder los propietarios de la cuenta o los administradores");
+            }
         }
 
     }
