@@ -7,5 +7,5 @@ import java.util.List;
 public interface ISavingsService {
     List<Savings> getAllSavingsAccounts();
 
-    Savings getMySavingsAccount(Integer id);
+    Savings getMySavingsAccount(Integer id,String name);
 }

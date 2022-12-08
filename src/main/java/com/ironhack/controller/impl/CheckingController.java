@@ -13,6 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.security.Principal;
 import java.util.List;
 
 @RestController
@@ -35,11 +36,18 @@ public class CheckingController implements ICheckingController {
     }
 
 
+    @GetMapping("/myaccounts")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Account> getMyAccountsByOwner(Principal user){
+        return checkingService.getMyAccountsByOwner(user.getName());
+    }
+    //SOLO PARA ADMINS
     @GetMapping("/myaccounts/{name}")
     @ResponseStatus(HttpStatus.OK)
-    public List<Account> getMyAccountsByOwner(@PathVariable(name = "name") String name){
+    public List<Account> getMyAccountsByOwnerAdmin(@PathVariable(name = "name") String name){
         return checkingService.getMyAccountsByOwner(name);
     }
+
     //POST
     @PostMapping("/checkings")
     @ResponseStatus(HttpStatus.ACCEPTED)

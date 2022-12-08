@@ -1,7 +1,12 @@
 package com.ironhack.service.impl;
 
+import com.ironhack.model.Account;
+import com.ironhack.model.AccountHolder;
 import com.ironhack.model.Savings;
+import com.ironhack.model.User;
+import com.ironhack.repository.AccountRepository;
 import com.ironhack.repository.SavingsRepository;
+import com.ironhack.repository.UserRepository;
 import com.ironhack.service.interfaces.ISavingsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,6 +15,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,12 +23,40 @@ import java.util.Optional;
 public class SavingsService implements ISavingsService {
     @Autowired
     SavingsRepository savingsRepository;
+    @Autowired
+    UserRepository userRepository;
+    @Autowired
+    AccountRepository accountRepository;
+
     //GET
     public List<Savings> getAllSavingsAccounts() {
         return savingsRepository.findAll();
     }
-    public Savings getMySavingsAccount(Integer id) {
+    public Savings getMySavingsAccount(Integer id,String name) {
 
+        Optional<User> optionalUser = userRepository.findByName(name);
+        String role = optionalUser.get().getRole();
+        Optional<Account> optionalAccount = accountRepository.findById(id);
+        String secondary = null;
+        String primary =null;
+
+        AccountHolder primaryOwner = optionalAccount.get().getPrimaryOwner();
+        if(primaryOwner != null) primary = primaryOwner.getName();
+
+        AccountHolder secondaryOwner = optionalAccount.get().getSecondaryOwner();
+        if(secondaryOwner != null) secondary = secondaryOwner.getName();
+
+        if(role.equals("ADMIN")){
+            return returnSavingsAccount(id);
+        } else if (primary.equals(name) || secondary.equals(name)) {
+            return returnSavingsAccount(id);
+        }else{
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN,"Solo pueden acceder los propietarios de la cuenta o los administradores");
+        }
+
+    }
+
+    public Savings returnSavingsAccount(Integer id){
         Optional<Savings>optionalSavings = savingsRepository.findById(id);
         validateEmptyAccount(optionalSavings);
         LocalDate creationDate = optionalSavings.get().getCreationDate();

@@ -42,7 +42,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.GET,"/mysavingsaccount/{id}").hasAnyAuthority("ROLE_ADMIN","ROLE_USER")
                 .antMatchers(HttpMethod.GET,"/creditcards").hasAnyAuthority("ROLE_ADMIN")
                 .antMatchers(HttpMethod.GET,"/mycreditaccount/{id}").hasAnyAuthority("ROLE_ADMIN","ROLE_USER")
-                .antMatchers(HttpMethod.GET,"/myaccounts/{name}").hasAnyAuthority("ROLE_USER","ROLE_ADMIN")
+                .antMatchers(HttpMethod.GET,"/myaccounts").hasAnyAuthority("ROLE_USER")
+                .antMatchers(HttpMethod.GET,"/myaccounts/{name}").hasAnyAuthority("ROLE_ADMIN")
+                .antMatchers(HttpMethod.GET,"/logUser").hasAnyAuthority("ROLE_USER","ROLE_ADMIN")
+
 
                 .antMatchers(HttpMethod.GET,"/accountholders").hasAnyAuthority("ROLE_ADMIN")
                 .antMatchers(HttpMethod.GET,"/users").hasAnyAuthority("ROLE_ADMIN")

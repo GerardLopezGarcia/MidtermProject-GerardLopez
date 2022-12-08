@@ -17,7 +17,10 @@
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="844f92c6-6160-4c22-b0a7-34dd269addde" object-ref="schemas/project_database/tables/savings" />
+      <object connection-id="844f92c6-6160-4c22-b0a7-34dd269addde" object-ref="schemas/project_database/tables/account" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="844f92c6-6160-4c22-b0a7-34dd269addde" dataset="project_database.user" active-filter-id="EMPTY_FILTER" />

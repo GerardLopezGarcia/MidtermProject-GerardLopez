@@ -29,10 +29,7 @@ public class CheckingService implements ICheckingService {
     AccountRepository accountRepository;
     @Autowired
     UserRepository userRepository;
-    @Autowired
-    SavingsRepository savingsRepository;
-    @Autowired
-    ThirdPartyRepository thirdPartyRepository;
+
 
 
     public void saveCheckingAccount(Checking checking) {
@@ -71,11 +68,13 @@ public class CheckingService implements ICheckingService {
     }
 
 
+
     public void deleteChecking(Integer id) {
         Optional<Checking> optionalChecking = checkingRepository.findById(id);
         if(optionalChecking.isEmpty())throw new ResponseStatusException(HttpStatus.NOT_FOUND,"La cuenta asociada a este id no existe");
         checkingRepository.deleteById(id);
     }
+
 
 
 

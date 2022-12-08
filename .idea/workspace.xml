@@ -5,7 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d3f55eaf-da7d-46b8-9553-ffbc507e188e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ironhack/service/impl/TransferService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ironhack/service/impl/TransferService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ironhack/controller/impl/CheckingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ironhack/controller/impl/CheckingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ironhack/controller/impl/SavingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ironhack/controller/impl/SavingsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ironhack/controller/interfaces/ICheckingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ironhack/controller/interfaces/ICheckingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ironhack/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ironhack/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ironhack/service/impl/CheckingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ironhack/service/impl/CheckingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ironhack/service/impl/SavingsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ironhack/service/impl/SavingsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ironhack/service/interfaces/ICheckingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ironhack/service/interfaces/ICheckingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ironhack/service/interfaces/ISavingsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ironhack/service/interfaces/ISavingsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +91,7 @@
       <recent name="com.ironhack" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AccountsControllerTest.transferMoney_From_ThirdUser">
+  <component name="RunManager" selected="Application.Application">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ironhack.Application" />
       <module name="Enterprise-Java-Development-4.02" />
@@ -127,9 +138,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Application" />
         <item itemvalue="JUnit.AccountsControllerTest.transferMoney_From_ThirdUser" />
         <item itemvalue="JUnit.UserControllerTest" />
-        <item itemvalue="Application.Application" />
       </list>
     </recent_temporary>
   </component>
