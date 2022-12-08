@@ -34,7 +34,7 @@ public class CheckingController implements ICheckingController {
         return checkingRepository.findAll();
     }
 
-    //spring security context @autentication!
+
     @GetMapping("/myaccounts/{name}")
     @ResponseStatus(HttpStatus.OK)
     public List<Account> getMyAccountsByOwner(@PathVariable(name = "name") String name){

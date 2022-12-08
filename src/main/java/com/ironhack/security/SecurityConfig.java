@@ -36,7 +36,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
                 //GET
                 .antMatchers(HttpMethod.GET,"/checkings").hasAnyAuthority("ROLE_ADMIN")
-                .antMatchers(HttpMethod.GET,"/accounts").hasAnyAuthority("ROLE_ADMIN","ROLE_USER")
+                .antMatchers(HttpMethod.GET,"/accounts").hasAnyAuthority("ROLE_ADMIN")
                 .antMatchers(HttpMethod.GET,"/studentcheckings").hasAnyAuthority("ROLE_ADMIN")
                 .antMatchers(HttpMethod.GET,"/savings").hasAnyAuthority("ROLE_ADMIN")
                 .antMatchers(HttpMethod.GET,"/mysavingsaccount/{id}").hasAnyAuthority("ROLE_ADMIN","ROLE_USER")

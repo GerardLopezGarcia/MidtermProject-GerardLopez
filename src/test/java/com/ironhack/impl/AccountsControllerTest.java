@@ -92,11 +92,11 @@ public class AccountsControllerTest {
 
     @Test
     void transferMoney_From_ThirdUser() throws Exception {
-        TransferDTO transferDTO = new TransferDTO("Hamzah Mejia","ironhack5",new BigDecimal("100"),3);
+        TransferDTO transferDTO = new TransferDTO("Hamzah Mejia","$2a$10$mk59gmke3LOCUELBeowbj.2EtcXX6POriTyKFaB8XKTWJEIt/2UN2",new BigDecimal("100"),3);
 
         String body = objectMapper.writeValueAsString(transferDTO);
 
-        mockMvc.perform(patch("/thirdpartyusers/$2a$10$6IqUFv0r2wa8wYh9GkfgB.Csa7zn78oMCs.Y1zgXMyXdWcaLiznMK").content(body).contentType(MediaType.APPLICATION_JSON))
+        mockMvc.perform(patch("/thirdpartyusers/ironhack").content(body).contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNoContent())
                 .andReturn();
 
@@ -107,7 +107,7 @@ public class AccountsControllerTest {
 
         System.out.println(mvcResult.getResponse().getContentAsString());
         //Hay que ajustar las cantidades para cada test
-        assertTrue(mvcResult.getResponse().getContentAsString().contains("2000"));
+        assertTrue(mvcResult.getResponse().getContentAsString().contains("1300"));
 
 
     }
