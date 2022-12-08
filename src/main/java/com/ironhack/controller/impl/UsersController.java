@@ -94,7 +94,9 @@ public class UsersController implements IUsersController {
     public void deleteThirdPartyUser(@PathVariable String name){
         userService.deleteThirdPartyUser(name);
     }
-    //PATCH
+
+
+    //PATCH- acceder y modificar balance de cualquier cuenta
     @PatchMapping("/accounts/balance/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void updateAccountBalance(@RequestBody BalanceDTO balanceDTO, @PathVariable  Integer id) {

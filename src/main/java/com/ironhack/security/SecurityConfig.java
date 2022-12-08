@@ -62,13 +62,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.PATCH,"/retrieveMoney").hasAnyAuthority("ROLE_ADMIN","ROLE_USER")
                 .antMatchers(HttpMethod.PATCH,"/thirdpartyusers/{hashedKey}").hasAnyAuthority("ROLE_ADMIN","ROLE_CONTRIBUTOR")
                 .antMatchers(HttpMethod.PATCH,"/thirdpartyusers/recieve/{hashedKey}").hasAnyAuthority("ROLE_ADMIN","ROLE_CONTRIBUTOR")
+
+                .antMatchers(HttpMethod.PATCH,"/accounts/balance/{id}").hasAnyAuthority("ROLE_ADMIN")
                 //DELETE
                 .antMatchers(HttpMethod.DELETE,"/checkings/{id}").hasAnyAuthority("ROLE_ADMIN")
 
                 .antMatchers(HttpMethod.DELETE,"/accountholders").hasAnyAuthority("ROLE_ADMIN")
                 .antMatchers(HttpMethod.DELETE,"/admins/{name}").hasAnyAuthority("ROLE_ADMIN")
-                .antMatchers(HttpMethod.DELETE,"/thirdpartyusers/{name}").hasAnyAuthority("ROLE_ADMIN")
-                .antMatchers(HttpMethod.DELETE,"/accounts/balance/{id}").hasAnyAuthority("ROLE_ADMIN");
+                .antMatchers(HttpMethod.DELETE,"/thirdpartyusers/{name}").hasAnyAuthority("ROLE_ADMIN");
+
 
 
 

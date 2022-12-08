@@ -17,11 +17,7 @@ public class TransferService implements ITransferService {
     @Autowired
     CheckingRepository checkingRepository;
     @Autowired
-    StudentCheckingRepository studentCheckingRepository;
-    @Autowired
     AccountRepository accountRepository;
-    @Autowired
-    UserRepository userRepository;
     @Autowired
     SavingsRepository savingsRepository;
     @Autowired
