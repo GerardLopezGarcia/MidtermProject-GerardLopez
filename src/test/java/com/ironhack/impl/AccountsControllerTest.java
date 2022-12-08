@@ -125,7 +125,7 @@ public class AccountsControllerTest {
 
     @Test
     void getMyAccountsByOwner() throws Exception {
-        MvcResult mvcResult = mockMvc.perform(get("/myaccounts/Erin Carr/ironhack"))
+        MvcResult mvcResult = mockMvc.perform(get("/myaccounts"))
                 .andExpect(status().isOk())
                 .andExpect(MockMvcResultMatchers.content().contentType((MediaType.APPLICATION_JSON)))
                 .andReturn();

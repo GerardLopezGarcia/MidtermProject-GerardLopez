@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d3f55eaf-da7d-46b8-9553-ffbc507e188e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/ironhack/impl/TestingSecurity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ironhack/controller/impl/CreditCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ironhack/controller/impl/CreditCardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ironhack/controller/interfaces/ICreditCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ironhack/controller/interfaces/ICreditCardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ironhack/service/impl/CreditCardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ironhack/service/impl/CreditCardService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ironhack/service/interfaces/ICreditCardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ironhack/service/interfaces/ICreditCardService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ironhack/impl/AccountsControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ironhack/impl/AccountsControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,21 +84,8 @@
       <recent name="com.ironhack" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Application">
-    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ironhack.Application" />
-      <module name="Enterprise-Java-Development-4.02" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ironhack.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AccountsControllerTest.transferMoney_From_ThirdUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.TestingSecurity.getCheckings">
+    <configuration name="TestingSecurity.getCheckings" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Enterprise-Java-Development-4.02" />
       <extension name="coverage">
         <pattern>
@@ -108,14 +94,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.ironhack.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.ironhack.impl.AccountsControllerTest" />
-      <option name="METHOD_NAME" value="transferMoney_From_ThirdUser" />
+      <option name="MAIN_CLASS_NAME" value="com.ironhack.impl.TestingSecurity" />
+      <option name="METHOD_NAME" value="getCheckings" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestingSecurity.getMyAccountsByOwner_withAuth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Enterprise-Java-Development-4.02" />
       <extension name="coverage">
         <pattern>
@@ -124,17 +110,68 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.ironhack.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.ironhack.impl.UserControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="com.ironhack.impl.TestingSecurity" />
+      <option name="METHOD_NAME" value="getMyAccountsByOwner_withAuth" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestingSecurity.getMyAccountsByOwner_withAuth_perform" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Enterprise-Java-Development-4.02" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ironhack.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ironhack.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.ironhack.impl.TestingSecurity" />
+      <option name="METHOD_NAME" value="getMyAccountsByOwner_withAuth_perform" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestingSecurity.getMyAccountsByOwner_withBadAuth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Enterprise-Java-Development-4.02" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ironhack.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ironhack.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.ironhack.impl.TestingSecurity" />
+      <option name="METHOD_NAME" value="getMyAccountsByOwner_withBadAuth" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestingSecurity.getMyAccountsByOwner_withBadAuth_perform" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Enterprise-Java-Development-4.02" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ironhack.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ironhack.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.ironhack.impl.TestingSecurity" />
+      <option name="METHOD_NAME" value="getMyAccountsByOwner_withBadAuth_perform" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Application" />
-        <item itemvalue="JUnit.AccountsControllerTest.transferMoney_From_ThirdUser" />
-        <item itemvalue="JUnit.UserControllerTest" />
+        <item itemvalue="JUnit.TestingSecurity.getCheckings" />
+        <item itemvalue="JUnit.TestingSecurity.getMyAccountsByOwner_withBadAuth_perform" />
+        <item itemvalue="JUnit.TestingSecurity.getMyAccountsByOwner_withAuth_perform" />
+        <item itemvalue="JUnit.TestingSecurity.getMyAccountsByOwner_withBadAuth" />
+        <item itemvalue="JUnit.TestingSecurity.getMyAccountsByOwner_withAuth" />
       </list>
     </recent_temporary>
   </component>
