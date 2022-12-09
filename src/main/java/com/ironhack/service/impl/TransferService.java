@@ -114,12 +114,12 @@ public class TransferService implements ITransferService {
         System.out.println("balance de la cuenta: " + account.get().getBalance().getAmount());
     }
 
-    public void thirdPartyTransferMoney(TransferDTO transferDTO, String hashedKey) {
+    public void thirdPartyTransferMoney(TransferDTO transferDTO, String name) {
 
         Optional<Account> optionalReceiverAccount = accountRepository.findById(transferDTO.getReceiverId());
         validateEmptyAccount(optionalReceiverAccount,transferDTO);
-        Optional<ThirdParty> optionalThirdParty = thirdPartyRepository.findByHashedKey(hashedKey);
-        if(optionalThirdParty.isEmpty())throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Contraseña 'hashedKey' incorrecta");
+        Optional<ThirdParty> optionalThirdParty = thirdPartyRepository.findByName(name);
+        if(optionalThirdParty.isEmpty())throw new ResponseStatusException(HttpStatus.FORBIDDEN, "La autenticación no corresponde con el usuario");
 
         String primaryOwnerName = optionalReceiverAccount.get().getPrimaryOwner().getName();
         String secondaryOwnerName = optionalReceiverAccount.get().getSecondaryOwner() ==null? "" : optionalReceiverAccount.get().getSecondaryOwner().getName();
@@ -148,12 +148,12 @@ public class TransferService implements ITransferService {
     }
 
 
-    public void thirdPartyRecieveMoney(TransferDTO transferDTO, String hashedKey) {
+    public void thirdPartyRecieveMoney(TransferDTO transferDTO, String name) {
 
         Optional<Account> optionalPayingAccount = accountRepository.findById(transferDTO.getReceiverId());
         validateEmptyAccount(optionalPayingAccount,transferDTO);
-        Optional<ThirdParty> optionalThirdParty = thirdPartyRepository.findByHashedKey(hashedKey);
-        if(optionalThirdParty.isEmpty())throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Contraseña 'hashedKey' incorrecta");
+        Optional<ThirdParty> optionalThirdParty = thirdPartyRepository.findByName(name);
+        if(optionalThirdParty.isEmpty())throw new ResponseStatusException(HttpStatus.FORBIDDEN, "La autenticación no corresponde con el usuario");
 
         String primaryOwnerName = optionalPayingAccount.get().getPrimaryOwner().getName();
         String secondaryOwnerName = optionalPayingAccount.get().getSecondaryOwner() ==null? "" : optionalPayingAccount.get().getSecondaryOwner().getName();

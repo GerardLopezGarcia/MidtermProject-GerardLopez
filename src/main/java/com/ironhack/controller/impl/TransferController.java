@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.security.Principal;
 
 @RestController
 public class TransferController implements ITransferController {
@@ -32,16 +33,16 @@ public class TransferController implements ITransferController {
     }
 
     //Transfers para terceros
-    @PatchMapping("/thirdpartyusers/{hashedKey}")
+    @PatchMapping("/thirdpartyusers")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void thirdTransferMoney(@RequestBody @Valid TransferDTO transferDTO, @PathVariable String hashedKey){
-        transferService.thirdPartyTransferMoney(transferDTO,hashedKey);
+    public void thirdTransferMoney(@RequestBody @Valid TransferDTO transferDTO, Principal user){
+        transferService.thirdPartyTransferMoney(transferDTO,user.getName());
     }
 
     //recibir dinero (Terceros)
-    @PatchMapping("/thirdpartyusers/recieve/{hashedKey}")
+    @PatchMapping("/thirdpartyusers/recieve")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void recieveMoney(@RequestBody @Valid TransferDTO transferDTO, @PathVariable String hashedKey){
-        transferService.thirdPartyRecieveMoney(transferDTO,hashedKey);
+    public void recieveMoney(@RequestBody @Valid TransferDTO transferDTO, Principal user){
+        transferService.thirdPartyRecieveMoney(transferDTO,user.getName());
     }
 }
