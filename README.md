@@ -26,8 +26,8 @@ Rutas disponibles para postman
 | ADMIN ,USER | "/mysavingsaccount/{id}" | GET  | ADMIN   | "/thirdpartyusers"  | POST  |
 | ADMIN  | "/creditcards" | GET  | ADMIN , USER | "/transfer"  | PATCH  |
 | ADMIN USER | "/mycreditaccount/{id}" | GET  | ADMIN , USER | "/retrieveMoney"  | PATCH  |
-| ADMIN , USER| "/myaccounts/{name}" | GET  | ADMIN , CONTRIBUTOR | "/thirdpartyusers/{hashedKey}"  | PATCH  |
-| ADMIN  | "/accountholders" | GET  | ADMIN , CONTRIBUTOR | "/thirdpartyusers/recieve/{hashedKey}" | PATCH  |
+| ADMIN , USER| "/myaccounts/{name}" | GET  |CONTRIBUTOR | "/thirdpartyusers"  | PATCH  |
+| ADMIN  | "/accountholders" | GET  | CONTRIBUTOR | "/thirdpartyusers/recieve" | PATCH  |
 | ADMIN  | "/users" | GET  | ADMIN   | "/checkings/{id}"  | DELETE  |
 | ADMIN  | "/admins" | GET  | ADMIN   | "/admins/{name}" (las mismas que POST)  | DELETE  |
 | ADMIN  | "/thirdpartyusers" | GET  | ADMIN   | "/thirdpartyusers/{name}" | DELETE  |
