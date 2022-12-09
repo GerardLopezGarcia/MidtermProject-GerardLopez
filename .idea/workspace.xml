@@ -185,10 +185,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Application" />
-        <item itemvalue="JUnit.TestingSecurity.getCheckings" />
         <item itemvalue="JUnit.TestingSecurity.getMyAccountsByOwner_withBadAuth_perform" />
-        <item itemvalue="JUnit.TestingSecurity.getMyAccountsByOwner_withAuth_perform" />
         <item itemvalue="JUnit.TestingSecurity.getMyAccountsByOwner_withBadAuth" />
+        <item itemvalue="JUnit.TestingSecurity.getMyAccountsByOwner_withAuth_perform" />
+        <item itemvalue="JUnit.TestingSecurity.getCheckings" />
       </list>
     </recent_temporary>
   </component>
