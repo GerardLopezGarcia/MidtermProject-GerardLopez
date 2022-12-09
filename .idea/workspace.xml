@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d3f55eaf-da7d-46b8-9553-ffbc507e188e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/ironhack/impl/TestingSecurity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01_12_2022_18_09__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01_12_2022_18_09__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ironhack/impl/AccountsControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ironhack/impl/AccountsControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,12 +25,31 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="gerard" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitToolBoxStore">
+    <option name="branchesCleanupHistory">
+      <BranchesCleanupHistory>
+        <option name="history">
+          <list>
+            <BranchCleanupEntry>
+              <option name="deletions">
+                <list>
+                  <BranchDeletion>
+                    <option name="hash" value="ba1df775b1d7d86018b82a44301702e49bfe89ac" />
+                    <option name="name" value="gerard" />
+                  </BranchDeletion>
+                </list>
+              </option>
+              <option name="timestamp" value="1670574418887" />
+            </BranchCleanupEntry>
+          </list>
+        </option>
+      </BranchesCleanupHistory>
+    </option>
     <option name="recentBranches">
       <RecentBranches>
         <option name="branchesForRepo">
@@ -41,12 +58,12 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1670487904" />
+                    <option name="branchName" value="pruebas" />
+                    <option name="lastUsedInstant" value="1670574427" />
                   </RecentBranch>
                   <RecentBranch>
-                    <option name="branchName" value="gerard" />
-                    <option name="lastUsedInstant" value="1669986252" />
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1670573475" />
                   </RecentBranch>
                 </list>
               </option>
@@ -84,7 +101,20 @@
       <recent name="com.ironhack" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestingSecurity.getCheckings">
+  <component name="RunManager" selected="Application.Application">
+    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ironhack.Application" />
+      <module name="Enterprise-Java-Development-4.02" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ironhack.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestingSecurity.getCheckings" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Enterprise-Java-Development-4.02" />
       <extension name="coverage">
@@ -96,22 +126,6 @@
       <option name="PACKAGE_NAME" value="com.ironhack.impl" />
       <option name="MAIN_CLASS_NAME" value="com.ironhack.impl.TestingSecurity" />
       <option name="METHOD_NAME" value="getCheckings" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestingSecurity.getMyAccountsByOwner_withAuth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Enterprise-Java-Development-4.02" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ironhack.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.ironhack.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.ironhack.impl.TestingSecurity" />
-      <option name="METHOD_NAME" value="getMyAccountsByOwner_withAuth" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -167,11 +181,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Application" />
         <item itemvalue="JUnit.TestingSecurity.getCheckings" />
         <item itemvalue="JUnit.TestingSecurity.getMyAccountsByOwner_withBadAuth_perform" />
         <item itemvalue="JUnit.TestingSecurity.getMyAccountsByOwner_withAuth_perform" />
         <item itemvalue="JUnit.TestingSecurity.getMyAccountsByOwner_withBadAuth" />
-        <item itemvalue="JUnit.TestingSecurity.getMyAccountsByOwner_withAuth" />
       </list>
     </recent_temporary>
   </component>
